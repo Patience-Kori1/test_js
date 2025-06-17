@@ -35,37 +35,73 @@
         // alert("Ci-dessous, ajoutez ce que vous voulez me dire: - Bonjour");
         // let answer = prompt("écris ce que tu veux : "); 
 
-        if (answer == "Bonjour") {
+        // if (answer == "Bonjour") {
             
-            // alert("Bonjour mon ami, comment vas-tu?");
+        //     alert("Bonjour mon ami, comment vas-tu?");
 
-            let answer2 = prompt("");
-            if (answer2 === "Je vais bien") {
-                    // alert("Cool ça, à bientot!")
-                } else if (answer2 === "Je ne vais pas bien") {
-                    // alert ("Désolé pour toi, ça ira mieux un autre jour")
-                } else {
-                // alert("Désolé, je n'ai pas compris")
-            };
+        //     let answer2 = prompt("");
+        //     if (answer2 === "Je vais bien") {
+        //             alert("Cool ça, à bientot!")
+        //         } else if (answer2 === "Je ne vais pas bien") {
+        //             alert ("Désolé pour toi, ça ira mieux un autre jour")
+        //         } else {
+        //         alert("Désolé, je n'ai pas compris")
+        //     };
         
             
-        } else if (answer == "Tu vas bien?") {
+        // } else if (answer == "Tu vas bien?") {
             
-            // alert(" Bien et toi? ");
+        //     alert(" Bien et toi? ");
 
-            let answer2 = prompt("");
-            if (answer2 === "Je vais bien") {
-                // alert("Cool ça, à bientot!")
-            } else if (answer2 === "Je ne vais pas bien") {
-                // alert ("Désolé pour toi, ça ira mieux un autre jour")
-            } else {
-            // alert("Désolé, je n'ai pas compris")
-            };
-         }
+        //     let answer2 = prompt("");
+        //     if (answer2 === "Je vais bien") {
+        //         alert("Cool ça, à bientot!")
+        //     } else if (answer2 === "Je ne vais pas bien") {
+        //         alert ("Désolé pour toi, ça ira mieux un autre jour")
+        //     } else {
+        //     alert("Désolé, je n'ai pas compris")
+        //     };
+        //  }
         
-         else {
-            // alert("Désolé, je n'ai pas compris")
-         };
+        //  else {
+        //     alert("Désolé, je n'ai pas compris")
+        //  };
+
+//EXERCICE 4 sur  les boucles : FizzBuzz
+
+for (let i=1; i<20; i++) {
+    console.log(i)
+}
+
+for ( let monNombre = 1; monNombre < 200; monNombre++ ) {
+    
+    if (monNombre%5 === 0 && monNombre%3 === 0 ) {
+        console.log("Fizz")
+    } 
+    else if (monNombre%3 === 0)  {
+        console.log("Buzz")
+    } 
+    else if (monNombre%5 === 0 ) {
+        console.log("FizzBuzz")
+    }
+    else {
+        console.log( monNombre )
+    }
+}
+
+// en ternaire
+
+for (let i = 1; i < 200; i++) {
+  console.log(
+    i % 3 === 0 && i % 5 === 0 ? "FizzBuzz" :
+    i % 3 === 0 ? "Fizz" :
+    i % 5 === 0 ? "Buzz" :
+    i
+  );
+}
+
+
+
 
         
 
