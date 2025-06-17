@@ -32,40 +32,48 @@
 
         //EXERCICE 3 sur  les structures conditionnelle
         
-        alert("Ci-dessous, ajoutez ce que vous voulez me dire: - Bonjour");
-        let answer = prompt("écris ce que tu veux : "); 
+        // alert("Ci-dessous, ajoutez ce que vous voulez me dire: - Bonjour");
+        // let answer = prompt("écris ce que tu veux : "); 
 
         if (answer == "Bonjour") {
             
-            alert("Bonjour mon ami, comment vas-tu?");
+            // alert("Bonjour mon ami, comment vas-tu?");
 
             let answer2 = prompt("");
             if (answer2 === "Je vais bien") {
-                    alert("Cool ça, à bientot!")
+                    // alert("Cool ça, à bientot!")
                 } else if (answer2 === "Je ne vais pas bien") {
-                    alert ("Désolé pour toi, ça ira mieux un autre jour")
+                    // alert ("Désolé pour toi, ça ira mieux un autre jour")
                 } else {
-                alert("Désolé, je n'ai pas compris")
+                // alert("Désolé, je n'ai pas compris")
             };
         
             
         } else if (answer == "Tu vas bien?") {
             
-            alert(" Bien et toi? ");
+            // alert(" Bien et toi? ");
 
             let answer2 = prompt("");
             if (answer2 === "Je vais bien") {
-                alert("Cool ça, à bientot!")
+                // alert("Cool ça, à bientot!")
             } else if (answer2 === "Je ne vais pas bien") {
-                alert ("Désolé pour toi, ça ira mieux un autre jour")
+                // alert ("Désolé pour toi, ça ira mieux un autre jour")
             } else {
-            alert("Désolé, je n'ai pas compris")
+            // alert("Désolé, je n'ai pas compris")
             };
          }
         
          else {
-            alert("Désolé, je n'ai pas compris")
+            // alert("Désolé, je n'ai pas compris")
          };
+
+        
+
+
+
+
+
+
 
          
 
