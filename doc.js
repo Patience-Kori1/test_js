@@ -6,6 +6,7 @@ console.log("Ouaips&nbsp;! Du fromage pour mettre sur un toast.");
 console.log("Pas de fromage sur le toast pour vous aujourd'hui.");
 }
 
+///////////////////////////////////////////////////////////////////
 let coursesFaites = false;
 
     if (coursesFaites) {
@@ -13,7 +14,8 @@ let coursesFaites = false;
     let argentDePoche = 10;
     } else {
     let argentDePoche = 5;
-    }
+    };
+///////////////////////////////////////////////////////////////////
 
 const select = document.querySelector("select");
 const para = document.querySelector("p");
