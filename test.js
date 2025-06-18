@@ -69,36 +69,66 @@
 
 //EXERCICE 4 sur  les boucles : FizzBuzz
 
-for (let i=1; i<20; i++) {
-    console.log(i)
-}
+// for (let i=1; i<20; i++) {
+//     console.log(i)
+// }
 
-for ( let monNombre = 1; monNombre < 200; monNombre++ ) {
+// for ( let monNombre = 1; monNombre < 200; monNombre++ ) {
     
-    if (monNombre%5 === 0 && monNombre%3 === 0 ) {
-        console.log("Fizz")
-    } 
-    else if (monNombre%3 === 0)  {
-        console.log("Buzz")
-    } 
-    else if (monNombre%5 === 0 ) {
-        console.log("FizzBuzz")
-    }
-    else {
-        console.log( monNombre )
-    }
-}
+//     if (monNombre%5 === 0 && monNombre%3 === 0 ) {
+//         console.log("Fizz")
+//     } 
+//     else if (monNombre%3 === 0)  {
+//         console.log("Buzz")
+//     } 
+//     else if (monNombre%5 === 0 ) {
+//         console.log("FizzBuzz")
+//     }
+//     else {
+//         console.log( monNombre )
+//     }
+// }
 
 // en ternaire
 
-for (let i = 1; i < 200; i++) {
-  console.log(
-    i % 3 === 0 && i % 5 === 0 ? "FizzBuzz" :
-    i % 3 === 0 ? "Fizz" :
-    i % 5 === 0 ? "Buzz" :
-    i
-  );
+// for (let i = 1; i < 200; i++) {
+//   console.log(
+//     i % 3 === 0 && i % 5 === 0 ? "FizzBuzz" :
+//     i % 3 === 0 ? "Fizz" :
+//     i % 5 === 0 ? "Buzz" :
+//     i
+//   );
+// }
+
+// EXERCICE SUR LES FONCTIONS
+
+// •	Une fonction diviserParDeux qui retourne la moitié de la valeur passée en paramètre. Tests : 
+// o	diviserParDeux(2) === 1;
+// o	diviserParDeux(4) === 2;
+// o	var n = Math.random(); diviserParDeux(n) === n / 2;
+
+function diviserParDeux(n) {
+     n = n/2;
+    return n
+};
+
+let i = diviserParDeux(6);
+console.log(i)
+
+// •	Une fonction somme qui retourne la somme des deux paramètres qui lui seront passés. Tests : 
+// o	somme(1, 1) === 2;
+// o	somme(1, 2) === 3;
+// o	somme(2, 1) === 3;
+// o	var n = Math.random(); somme(n, 1) === n + 1;
+
+function somme(a,b) {
+    n= a+b;
+    return n
 }
+
+let ii= somme(78,5.36547)
+console.log(ii)
+
 
 
 
