@@ -111,4 +111,40 @@ switch (true) {
     break;
     default : alert("Je ne comprends pas ta réponse") 
 }
-// 
+
+let role = prompt("Quel est ton rôle ? (admin, user, moderator)").toLowerCase();
+let level = Number(prompt("Quel est ton niveau d'accès ? (1 à 5)"));
+
+// Traitement selon le rôle (SWITCH principal)
+switch (role) {
+    case "admin":
+        alert("Bienvenue Admin !");
+        if (level >= 4) {
+            alert("⚙️ Accès total à la configuration système.");
+        } else {
+            alert("🔧 Accès limité à certaines fonctionnalités.");
+        }
+        break;
+
+    case "moderator":
+        alert("Bonjour Modérateur !");
+        if (level >= 3) {
+            alert("🛡 Tu peux gérer les commentaires et bannir des utilisateurs.");
+        } else {
+            alert("📝 Tu peux uniquement modérer les commentaires.");
+        }
+        break;
+
+    case "user":
+        alert("Salut utilisateur !");
+        if (level >= 2) {
+            alert("👤 Tu peux modifier ton profil et poster des messages.");
+        } else {
+            alert("👀 Tu peux uniquement consulter les contenus.");
+        }
+        break;
+
+    default:
+        alert("❌ Rôle non reconnu. Accès refusé.");
+}
+
