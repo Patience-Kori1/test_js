@@ -152,4 +152,13 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
                     // APPRENTISSAGE DES STRUCTURES DE BOUCLES
 
+const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin"];
+let info = "Mes chats s'appellent ";
+const para = document.querySelector("h4");
+
+for (let i = 0; i < chats.length; i++) {
+  info += chats[i] + ", ";
+}
+
+para.textContent = info;
 
