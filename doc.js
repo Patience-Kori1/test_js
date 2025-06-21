@@ -157,8 +157,19 @@ let info = "Mes chats s'appellent ";
 const para = document.querySelector("h4");
 
 for (let i = 0; i < chats.length; i++) {
-  info += chats[i] + ", ";
+  console.log(info += chats[i] + ", ");
 }
 
-para.textContent = info;
+// para.textContent = info;
+
+// const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin"];
+// const para = document.querySelector("h4");
+
+// let info = "";
+
+// for (let i = 0; i < chats.length; i++) {
+//   info = "Mon chat s'appelle " + chats[i];
+//   para.textContent += info + "\n "; // ou "<br>" si innerHTML
+// }
+
 
