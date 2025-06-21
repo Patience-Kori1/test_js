@@ -172,4 +172,13 @@ for (let i = 0; i < chats.length; i++) {
 //   para.textContent += info + "\n "; // ou "<br>" si innerHTML
 // }
 
+// BOUCLE COMBINE DES IF ELSE 
+
+for (let i = 0; i < cats.length; i++) {
+  if (i === cats.length - 1) {
+    info += "and " + cats[i] + ".";
+  } else {
+    info += cats[i] + ", ";
+  }
+}
 
