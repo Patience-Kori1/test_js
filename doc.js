@@ -152,17 +152,50 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
                     // APPRENTISSAGE DES STRUCTURES DE BOUCLES
 
-const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin",];
-let info = "Mes chats s'appellent ";
-const para = document.querySelector("h4");
+// Boucle For Standard
+// const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin",];
+// let info = "Mes chats s'appellent ";
+// const para = document.querySelector("h4");
 
-for (let i = 0; i < chats.length; i++) {
-  info += chats[i] + ", ";
-  if (i=== chats.length -1) {
-    info += chats[i] + ". ";
+// for (let i = 0; i < chats.length; i++) {
+//   if (i=== chats.length -1) {
+//     info += chats[i] + ". ";
+//   } else {
+//     info += chats[i] + ", ";
+//   }
+// }
+// para.textContent = info;
+
+// Apprentissage de Break pour quitter une boucle
+const contacts = [
+  "Chris:2232322",
+  "Sarah:3453456",
+  "Bill:7654322",
+  "Mary:9998769",
+  "Dianne:9384975",
+];
+const para = document.querySelector("p");
+const input = document.querySelector("input");
+const bouton = document.querySelector("button");
+
+bouton.addEventListener("click", function () {
+  let searchName = input.value;
+  input.value = "";
+  input.focus();
+  for (let i = 0; i < contacts.length; i++) {
+    let splitContact = contacts[i].split(":");
+    if (splitContact[0] === searchName) {
+      para.textContent =
+        "Le numéro de " + splitContact[0] + " est le : "  + splitContact[1] + ".";
+      break;
+    } else {
+      para.textContent = "Contact not found.";
+    }
   }
-}
-para.textContent = info;
-console.log(chats.length -1)
+});
+
+
+
+
 
 
