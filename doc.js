@@ -152,33 +152,17 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
                     // APPRENTISSAGE DES STRUCTURES DE BOUCLES
 
-const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin"];
+const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin",];
 let info = "Mes chats s'appellent ";
 const para = document.querySelector("h4");
 
 for (let i = 0; i < chats.length; i++) {
-  console.log(info += chats[i] + ", ");
-}
-
-// para.textContent = info;
-
-// const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin"];
-// const para = document.querySelector("h4");
-
-// let info = "";
-
-// for (let i = 0; i < chats.length; i++) {
-//   info = "Mon chat s'appelle " + chats[i];
-//   para.textContent += info + "\n "; // ou "<br>" si innerHTML
-// }
-
-// BOUCLE COMBINE DES IF ELSE 
-
-for (let i = 0; i < cats.length; i++) {
-  if (i === cats.length - 1) {
-    info += "and " + cats[i] + ".";
-  } else {
-    info += cats[i] + ", ";
+  info += chats[i] + ", ";
+  if (i=== chats.length -1) {
+    info += chats[i] + ". ";
   }
 }
+para.textContent = info;
+console.log(chats.length -1)
+
 
