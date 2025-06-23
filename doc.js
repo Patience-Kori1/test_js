@@ -152,7 +152,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
                     // APPRENTISSAGE DES STRUCTURES DE BOUCLES
 
-// Boucle For Standard
+                    // Boucle For Standard
 // const chats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin",];
 // let info = "Mes chats s'appellent ";
 // const para = document.querySelector("h4");
@@ -194,7 +194,7 @@
 //   }
 // });
 
-// CONTINUE pour passer des itérations 
+                    // CONTINUE pour passer des itérations 
 // let num = input.value;
 
 // for (let i = 1; i <= num; i++) {
@@ -208,18 +208,35 @@
 //   return Math.random();
 // }
 
-for (let i = 0; i <= 10; i++) {
-  if (i === 3) {
-    continue; // saute 3
-  }
-  if (i === 7) {
-    break; // arrête au 7
-  }
-  console.log(i);
-}
+// for (let i = 0; i <= 10; i++) {
+//   if (i === 3) {
+//     continue; // saute 3
+//   }
+//   if (i === 7) {
+//     break; // arrête au 7
+//   }
+//   console.log(i);
+// }
 
+///////////////////// APPRENTISSAGE DES FONCTIONS
+                    // Comprendre la portée des variables globale et locale
+const x = 1;
 
+    function a() {
+      const y = 2;
+    }
 
+    function b() {
+      const z = 3;
+    }
+
+    function output(value) {
+      const para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = `Value: ${value}`;
+    }
+output(x);
+output(y);
 
 
 
