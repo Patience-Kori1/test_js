@@ -129,6 +129,8 @@ function somme(a,b) {
 let ii= somme(78,5.36547)
 console.log(ii)
 
+let hasard = Math.random();
+console.log(hasard);
 
 
 

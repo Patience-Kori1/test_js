@@ -167,32 +167,63 @@
 // para.textContent = info;
 
 // Apprentissage de Break pour quitter une boucle
-const contacts = [
-  "Chris:2232322",
-  "Sarah:3453456",
-  "Bill:7654322",
-  "Mary:9998769",
-  "Dianne:9384975",
-];
-const para = document.querySelector("p");
-const input = document.querySelector("input");
-const bouton = document.querySelector("button");
+// const contacts = [
+//   "Chris:2232322",
+//   "Sarah:3453456",
+//   "Bill:7654322",
+//   "Mary:9998769",
+//   "Dianne:9384975",
+// ];
+// const para = document.querySelector("p");
+// const input = document.querySelector("input");
+// const bouton = document.querySelector("button");
 
-bouton.addEventListener("click", function () {
-  let searchName = input.value;
-  input.value = "";
-  input.focus();
-  for (let i = 0; i < contacts.length; i++) {
-    let splitContact = contacts[i].split(":");
-    if (splitContact[0] === searchName) {
-      para.textContent =
-        "Le numéro de " + splitContact[0] + " est le : "  + splitContact[1] + ".";
-      break;
-    } else {
-      para.textContent = "Contact not found.";
-    }
+// bouton.addEventListener("click", function () {
+//   let searchName = input.value;
+//   input.value = "";
+//   input.focus();
+//   for (let i = 0; i < contacts.length; i++) {
+//     let splitContact = contacts[i].split(":");
+//     if (splitContact[0] === searchName) {
+//       para.textContent =
+//         "Le numéro de " + splitContact[0] + " est le : "  + splitContact[1] + ".";
+//       break;
+//     } else {
+//       para.textContent = "Contact not found.";
+//     }
+//   }
+// });
+
+// CONTINUE pour passer des itérations 
+// let num = input.value;
+
+// for (let i = 1; i <= num; i++) {
+//   let sqRoot = Math.sqrt(i);
+//   if (Math.floor(sqRoot) !== sqRoot) {
+//     continue;
+//   }
+//   para.textContent += i + " ";
+// }
+// function getRandom() {
+//   return Math.random();
+// }
+
+for (let i = 0; i <= 10; i++) {
+  if (i === 3) {
+    continue; // saute 3
   }
-});
+  if (i === 7) {
+    break; // arrête au 7
+  }
+  console.log(i);
+}
+
+
+
+
+
+
+
 
 
 
