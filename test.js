@@ -147,6 +147,33 @@ console.log(jours[2]);
 console.log(jours[jours.length -1]);
 
 
+//Exercice: Épicerie
+
+var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+
+for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
+    alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
+    alert("Saisissez dans le formulaire suivant votre fruits préféré")
+    let choixClient = prompt();
+    console.log(choixClient);
+    let fruitTrouve = false;
+
+        for (let i=0; i < fruits.length; i++) {
+            if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
+                console.log(fruits);
+                fruitTrouve = true;
+                fruits.splice(i,1)
+                console.log(fruits);
+                alert("ok");
+                break;
+            }  
+        }
+        if (!fruitTrouve){
+                alert("Indisponible");
+            }
+        console.log(fruits);
+}
+
 
 
 
