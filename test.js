@@ -132,6 +132,21 @@ console.log(ii)
 let hasard = Math.random();
 console.log(hasard);
 
+// EXERCICE 7 Concernant les tableaux
+
+// Calendrier 
+let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+jours.pop();
+console.log(jours);
+jours.push('dim');
+console.log(jours);
+jours[1] = 'mar';
+console.log(jours);
+console.log(jours.length);
+console.log(jours[2]);
+console.log(jours[jours.length -1]);
+
+
 
 
 
