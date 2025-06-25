@@ -132,47 +132,51 @@
 // let hasard = Math.random();
 // console.log(hasard);
 
-// EXERCICE 7 Concernant les tableaux
+// EXERCICE 7 SUR LES TABLEAUX
 
-// Calendrier 
-// let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
-// jours.pop();
-// console.log(jours);
-// jours.push('dim');
-// console.log(jours);
-// jours[1] = 'mar';
-// console.log(jours);
-// console.log(jours.length);
-// console.log(jours[2]);
-// console.log(jours[jours.length -1]);
+// Exercice 7. A. : Calendrier
+
+Calendrier 
+let jours = ['lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+jours.pop();
+console.log(jours);
+jours.push('dim');
+console.log(jours);
+jours[1] = 'mar';
+console.log(jours);
+console.log(jours.length);
+console.log(jours[2]);
+console.log(jours[jours.length -1]);
 
 
-//Exercice: Épicerie
+// Exercice 7. B. : Épicerie
 
-// var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
 
-// for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
-//     alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
-//     alert("Saisissez dans le formulaire suivant votre fruits préféré")
-//     let choixClient = prompt();
-//     console.log(choixClient);
-//     let fruitTrouve = false;
+for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
+    alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
+    alert("Saisissez dans le formulaire suivant votre fruits préféré")
+    let choixClient = prompt();
+    console.log(choixClient);
+    let fruitTrouve = false;
 
-//         for (let i=0; i < fruits.length; i++) {
-//             if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
-//                 console.log(fruits);
-//                 fruitTrouve = true;
-//                 fruits.splice(i,1)
-//                 console.log(fruits);
-//                 alert("ok");
-//                 break;
-//             }  
-//         }
-//         if (!fruitTrouve){
-//                 alert("Indisponible");
-//             }
-//         console.log(fruits);
-// }
+        for (let i=0; i < fruits.length; i++) {
+            if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
+                console.log(fruits);
+                fruitTrouve = true;
+                fruits.splice(i,1)
+                console.log(fruits);
+                alert("ok");
+                break;
+            }  
+        }
+        if (!fruitTrouve){
+                alert("Indisponible");
+            }
+        console.log(fruits);
+}7
+
+// Exercice 7. C. : Pendu
 let mauvaisesLettres = [ ]; // sera complété pendant le jeu
 let lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
 
@@ -197,7 +201,6 @@ for (let i=0; mauvaisesLettres.length < 10; i++) {
         alert("Tu as perdu")
     }
 }
-
 
 
 
