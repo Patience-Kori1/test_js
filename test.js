@@ -1,32 +1,32 @@
  // Exercice 1. Les types de variable en JS
 
-        let a= 0; // number
-        let b= true; // Boolean
-        let c = 2 - 1.2; //number
-        let d ='hello'; // String
-        let e = 'bonjour' + 4; // String
-        let f = { a: 0.4 }; // Object 
-        let g = [ 'a', 'b', 'c' ]; // Array, Object
+        // let a= 0; // number
+        // let b= true; // Boolean
+        // let c = 2 - 1.2; //number
+        // let d ='hello'; // String
+        // let e = 'bonjour' + 4; // String
+        // let f = { a: 0.4 }; // Object 
+        // let g = [ 'a', 'b', 'c' ]; // Array, Object
 
-        console.log(typeof(g));
+        // console.log(typeof(g));
 
         // Exercice 2. Sur la déclaration des variables
 
-        var monNombre = 4;
-        var maChaine = 'bonjour ! :-)';
-        var monBooleen = false;
-        var sansValeur;
+        // var monNombre = 4;
+        // var maChaine = 'bonjour ! :-)';
+        // var monBooleen = false;
+        // var sansValeur;
 
-        var monNombre = 4;
-        var maChaine = 'bonjour ! :-)';
-        var monBooleen = false;
-        var sansValeur;
+        // var monNombre = 4;
+        // var maChaine = 'bonjour ! :-)';
+        // var monBooleen = false;
+        // var sansValeur;
 
-        // Vérification des variables
-        console.log(monNombre === 4); // Devrait afficher true si monNombre vaut 4
-        console.log(maChaine === 'bonjour ! :-)'); // Devrait afficher true si maChaine contient 'bonjour ! :-)'
-        console.log(monBooleen === false); // Devrait afficher true si monBooleen vaut false
-        console.log(sansValeur === undefined); //
+        // // Vérification des variables
+        // console.log(monNombre === 4); // Devrait afficher true si monNombre vaut 4
+        // console.log(maChaine === 'bonjour ! :-)'); // Devrait afficher true si maChaine contient 'bonjour ! :-)'
+        // console.log(monBooleen === false); // Devrait afficher true si monBooleen vaut false
+        // console.log(sansValeur === undefined); //
 
         // alert(sansValeur === undefined)
 
@@ -107,13 +107,13 @@
 // o	diviserParDeux(4) === 2;
 // o	var n = Math.random(); diviserParDeux(n) === n / 2;
 
-function diviserParDeux(n) {
-     n = n/2;
-    return n
-};
+// function diviserParDeux(n) {
+//      n = n/2;
+//     return n
+// };
 
-let i = diviserParDeux(6);
-console.log(i)
+// let i = diviserParDeux(6);
+// console.log(i)
 
 // •	Une fonction somme qui retourne la somme des deux paramètres qui lui seront passés. Tests : 
 // o	somme(1, 1) === 2;
@@ -121,57 +121,81 @@ console.log(i)
 // o	somme(2, 1) === 3;
 // o	var n = Math.random(); somme(n, 1) === n + 1;
 
-function somme(a,b) {
-    n= a+b;
-    return n
-}
+// function somme(a,b) {
+//     n= a+b;
+//     return n
+// }
 
-let ii= somme(78,5.36547)
-console.log(ii)
+// let ii= somme(78,5.36547)
+// console.log(ii)
 
-let hasard = Math.random();
-console.log(hasard);
+// let hasard = Math.random();
+// console.log(hasard);
 
 // EXERCICE 7 Concernant les tableaux
 
 // Calendrier 
-let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
-jours.pop();
-console.log(jours);
-jours.push('dim');
-console.log(jours);
-jours[1] = 'mar';
-console.log(jours);
-console.log(jours.length);
-console.log(jours[2]);
-console.log(jours[jours.length -1]);
+// let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+// jours.pop();
+// console.log(jours);
+// jours.push('dim');
+// console.log(jours);
+// jours[1] = 'mar';
+// console.log(jours);
+// console.log(jours.length);
+// console.log(jours[2]);
+// console.log(jours[jours.length -1]);
 
 
 //Exercice: Épicerie
 
-var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+// var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
 
-for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
-    alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
-    alert("Saisissez dans le formulaire suivant votre fruits préféré")
-    let choixClient = prompt();
-    console.log(choixClient);
-    let fruitTrouve = false;
+// for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
+//     alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
+//     alert("Saisissez dans le formulaire suivant votre fruits préféré")
+//     let choixClient = prompt();
+//     console.log(choixClient);
+//     let fruitTrouve = false;
 
-        for (let i=0; i < fruits.length; i++) {
-            if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
-                console.log(fruits);
-                fruitTrouve = true;
-                fruits.splice(i,1)
-                console.log(fruits);
-                alert("ok");
-                break;
-            }  
-        }
-        if (!fruitTrouve){
-                alert("Indisponible");
-            }
-        console.log(fruits);
+//         for (let i=0; i < fruits.length; i++) {
+//             if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
+//                 console.log(fruits);
+//                 fruitTrouve = true;
+//                 fruits.splice(i,1)
+//                 console.log(fruits);
+//                 alert("ok");
+//                 break;
+//             }  
+//         }
+//         if (!fruitTrouve){
+//                 alert("Indisponible");
+//             }
+//         console.log(fruits);
+// }
+let mauvaisesLettres = [ ]; // sera complété pendant le jeu
+let lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+
+
+for (let i=0; mauvaisesLettres.length < 10; i++) {
+    alert("Veuillez entrez votre réponse");
+    let choixJoueur = prompt();
+    
+    if (lettresAttendues.indexOf(choixJoueur) !== -1) {
+        lettresAttendues.splice(lettresAttendues.indexOf(choixJoueur),1);
+        console.log(lettresAttendues);
+    } else {
+        mauvaisesLettres.push(choixJoueur);
+        console.log(choixJoueur);
+        console.log(mauvaisesLettres);
+    }
+    if(lettresAttendues.length === 0 ){
+        alert("Bravo, tu as gagné");
+        break;
+
+    } else if (mauvaisesLettres.length === 10){
+        alert("Tu as perdu")
+    }
 }
 
 
