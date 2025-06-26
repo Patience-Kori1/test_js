@@ -135,72 +135,92 @@
 // EXERCICE 7 SUR LES TABLEAUX
 
 // Exercice 7. A. : Calendrier
-
-Calendrier 
-let jours = ['lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
-jours.pop();
-console.log(jours);
-jours.push('dim');
-console.log(jours);
-jours[1] = 'mar';
-console.log(jours);
-console.log(jours.length);
-console.log(jours[2]);
-console.log(jours[jours.length -1]);
-
-
-// Exercice 7. B. : Épicerie
-
-var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
-
-for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
-    alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
-    alert("Saisissez dans le formulaire suivant votre fruits préféré")
-    let choixClient = prompt();
-    console.log(choixClient);
-    let fruitTrouve = false;
-
-        for (let i=0; i < fruits.length; i++) {
-            if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
-                console.log(fruits);
-                fruitTrouve = true;
-                fruits.splice(i,1)
-                console.log(fruits);
-                alert("ok");
-                break;
-            }  
-        }
-        if (!fruitTrouve){
-                alert("Indisponible");
-            }
-        console.log(fruits);
-}7
-
-// Exercice 7. C. : Pendu
-let mauvaisesLettres = [ ]; // sera complété pendant le jeu
-let lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+ 
+// let jours = ['lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+// jours.pop();
+// console.log(jours);
+// jours.push('dim');
+// console.log(jours);
+// jours[1] = 'mar';
+// console.log(jours);
+// console.log(jours.length);
+// console.log(jours[2]);
+// console.log(jours[jours.length -1]);
 
 
-for (let i=0; mauvaisesLettres.length < 10; i++) {
-    alert("Veuillez entrez votre réponse");
-    let choixJoueur = prompt();
+// // Exercice 7. B. : Épicerie
+
+// var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+
+// for (let a=0; a < 5; a++ ){ // J'ai mis cette boucle juste pour voir l'évolution de mon tableau
+//     alert("Voici la liste des fruits dispo : " + fruits.join(", ") );
+//     alert("Saisissez dans le formulaire suivant votre fruits préféré")
+//     let choixClient = prompt();
+//     console.log(choixClient);
+//     let fruitTrouve = false;
+
+//         for (let i=0; i < fruits.length; i++) {
+//             if(choixClient.toLowerCase() === fruits[i].toLowerCase() ) {
+//                 console.log(fruits);
+//                 fruitTrouve = true;
+//                 fruits.splice(i,1)
+//                 console.log(fruits);
+//                 alert("ok");
+//                 break;
+//             }  
+//         }
+//         if (!fruitTrouve){
+//                 alert("Indisponible");
+//             }
+//         console.log(fruits);
+// }7
+
+// // Exercice 7. C. : Pendu
+// let mauvaisesLettres = [ ]; // sera complété pendant le jeu
+// let lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+
+
+// for (let i=0; mauvaisesLettres.length < 10; i++) {
+//     alert("Veuillez entrez votre réponse");
+//     let choixJoueur = prompt();
     
-    if (lettresAttendues.indexOf(choixJoueur) !== -1) {
-        lettresAttendues.splice(lettresAttendues.indexOf(choixJoueur),1);
-        console.log(lettresAttendues);
-    } else {
-        mauvaisesLettres.push(choixJoueur);
-        console.log(choixJoueur);
-        console.log(mauvaisesLettres);
-    }
-    if(lettresAttendues.length === 0 ){
-        alert("Bravo, tu as gagné");
-        break;
+//     if (lettresAttendues.indexOf(choixJoueur) !== -1) {
+//         lettresAttendues.splice(lettresAttendues.indexOf(choixJoueur),1);
+//         console.log(lettresAttendues);
+//     } else {
+//         mauvaisesLettres.push(choixJoueur);
+//         console.log(choixJoueur);
+//         console.log(mauvaisesLettres);
+//     }
+//     if(lettresAttendues.length === 0 ){
+//         alert("Bravo, tu as gagné");
+//         break;
 
-    } else if (mauvaisesLettres.length === 10){
-        alert("Tu as perdu")
-    }
-}
+//     } else if (mauvaisesLettres.length === 10){
+//         alert("Tu as perdu")
+//     }
+// }
+
+// EXERCICE 8 SUR LES OBJETS
+
+// Exercice 7. A. : Annuaire téléphonique
+
+let annuaire = {
+    Patricia: '06 66 66 66 66',
+    David: '07 77 77 77 77',
+    Simon: '07 32 51 21 2',
+    Salomé: '08 22 26 65',
+    Victoria: '02 35 46 7',
+};
+
+let searchUser =prompt(" Veuillez saisir le prénom dont vous cherchez le numéro : ");
+searchUser = searchUser.charAt(0).toUpperCase() + searchUser.slice(1).toLowerCase(); // Pour gérer les majuscules et les miniscules des saisies user. Voir le doc Brouillon JS
+alert(
+    annuaire[searchUser] ? 
+    `le numéros de ${searchUser} est le: ${annuaire[searchUser]}` : 
+    `Désolé le numéro de ${searchUser} n'existe pas dans notre répértoire`
+);
+
 
 
 
