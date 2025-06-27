@@ -205,26 +205,44 @@
 
 // Exercice 7. A. : Annuaire téléphonique
 
-let annuaire = {
-    Patricia: '06 66 66 66 66',
-    David: '07 77 77 77 77',
-    Simon: '07 32 51 21 2',
-    Salomé: '08 22 26 65',
-    Victoria: '02 35 46 7',
-};
+// let annuaire = {
+//     Patricia: '06 66 66 66 66',
+//     David: '07 77 77 77 77',
+//     Simon: '07 32 51 21 2',
+//     Salomé: '08 22 26 65',
+//     Victoria: '02 35 46 7',
+// };
 
-let searchUser =prompt(" Veuillez saisir le prénom dont vous cherchez le numéro : ");
-searchUser = searchUser.charAt(0).toUpperCase() + searchUser.slice(1).toLowerCase(); // Pour gérer les majuscules et les miniscules des saisies user. Voir le doc Brouillon JS
-alert(
-    annuaire[searchUser] ? 
-    `le numéros de ${searchUser} est le: ${annuaire[searchUser]}` : 
-    `Désolé le numéro de ${searchUser} n'existe pas dans notre répértoire`
-);
-
-
+// let searchUser =prompt(" Veuillez saisir le prénom dont vous cherchez le numéro : ");
+// searchUser = searchUser.charAt(0).toUpperCase() + searchUser.slice(1).toLowerCase(); // Pour gérer les majuscules et les miniscules des saisies user. Voir le doc Brouillon JS
+// alert(
+//     annuaire[searchUser] ? 
+//     `le numéros de ${searchUser} est le: ${annuaire[searchUser]}` : 
+//     `Désolé le numéro de ${searchUser} n'existe pas dans notre répértoire`
+// );
 
 
-        
+///// Correction de l'exercice sur la POO et l'instanciation
+
+class Etudiant {
+    constructor(nom, age, poids) {
+        this.nom = nom;       // Propriété nom
+        this.age = age;       // Propriété age
+        this.poids = poids;   // Propriété poids
+    }
+
+    presenter() {
+        // Méthode pour afficher une présentation de l'étudiant
+        alert(`L'étudiant s'appelle ${this.nom}. Il a ${this.age} ans et pèse ${this.poids} kg.`);
+    }
+}
+
+// Instanciation d’un objet de la classe
+let etudiant1 = new Etudiant('Patience', 20, 60);
+
+// Appel de la méthode
+etudiant1.presenter();
+
 
 
 

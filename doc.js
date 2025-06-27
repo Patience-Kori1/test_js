@@ -236,7 +236,9 @@ const x = 1;
       para.textContent = `Value: ${value}`;
     }
 output(x);
-output(y);
+// output(y);
+
+
 
 
 
