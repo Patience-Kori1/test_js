@@ -224,26 +224,30 @@
 
 ///// Correction de l'exercice sur la POO et l'instanciation
 
-class Etudiant {
-    constructor(nom, age, poids) {
-        this.nom = nom;       // Propriété nom
-        this.age = age;       // Propriété age
-        this.poids = poids;   // Propriété poids
-    }
+// class Etudiant {
+//     constructor(nom, age, poids) {
+//         this.nom = nom;       // Propriété nom
+//         this.age = age;       // Propriété age
+//         this.poids = poids;   // Propriété poids
+//     }
 
-    presenter() {
-        // Méthode pour afficher une présentation de l'étudiant
-        alert(`L'étudiant s'appelle ${this.nom}. Il a ${this.age} ans et pèse ${this.poids} kg.`);
-    }
-}
+//     presenter() {
+//         // Méthode pour afficher une présentation de l'étudiant
+//         alert(`L'étudiant s'appelle ${this.nom}. Il a ${this.age} ans et pèse ${this.poids} kg.`);
+//     }
+// }
 
-// Instanciation d’un objet de la classe
-let etudiant1 = new Etudiant('Patience', 20, 60);
+// // Instanciation d’un objet de la classe
+// let etudiant1 = new Etudiant('Patience', 20, 60);
 
-// Appel de la méthode
-etudiant1.presenter();
+// // Appel de la méthode
+// etudiant1.presenter();
 
+// Correction de la partie A de l'exercice 9 sur le DOM
 
+let h1 = document.querySelector('h1');
+h1.textContent = "Ma page de test Java Script pour le cours de la formation";
+alert(h1.textContent);
 
 
 
