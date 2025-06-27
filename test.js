@@ -249,15 +249,41 @@ let h1 = document.querySelector('h1');
 h1.textContent = "Ma page de test Java Script pour le cours de la formation";
 console.log(h1);
 
-// git commit -m Correction de l'exercice 9 sur le DOM. Partie B : la récupération des valeurs du formulaire
+// Correction de l'exercice 9 sur le DOM. Partie B : la récupération des valeurs du formulaire
 
-let inputNom = document.querySelector('.nom');
-let inputPrenom = document.querySelector('.prenom');
-inputNom.value = "Fort";
-inputPrenom.value = "Sim";
+// let inputNom = document.querySelector('.nom');
+// let inputPrenom = document.querySelector('.prenom');
+// inputNom.value = "Fort";
+// inputPrenom.value = "Sim";
 
-alert(inputNom.value);
-alert(inputPrenom.value);
+// alert(inputNom.value);
+// alert(inputPrenom.value);
+
+// Correction de l'exercice 9 sur le DOM. Partie C : Calculatrice (Onclik + récup value form)
+
+let premierNombre = document.querySelector(".premierNombre");
+let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
+let button = document.querySelector(".button")
+let resultat = document.querySelector(".resultat");
+
+button.onclick = function (){
+
+    let chiffreUn = parseFloat(premierNombre.value); 
+    let chiffreDeux = parseFloat(deuxiemeNombre.value);
+
+    if (isNaN(chiffreUn) || isNaN(chiffreDeux) ) {
+        premierNombre.value="";
+        deuxiemeNombre.value ="";
+        resultat.value = "Que des chiffres svp";
+
+  } else {
+        resultat.value = chiffreUn + chiffreDeux;
+        premierNombre.value="";
+        deuxiemeNombre.value ="";
+    }
+   
+}
+
 
 
 
