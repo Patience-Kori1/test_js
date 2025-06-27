@@ -247,8 +247,17 @@
 
 let h1 = document.querySelector('h1');
 h1.textContent = "Ma page de test Java Script pour le cours de la formation";
-alert(h1.textContent);
+console.log(h1);
 
+// git commit -m Correction de l'exercice 9 sur le DOM. Partie B : la récupération des valeurs du formulaire
+
+let inputNom = document.querySelector('.nom');
+let inputPrenom = document.querySelector('.prenom');
+inputNom.value = "Fort";
+inputPrenom.value = "Sim";
+
+alert(inputNom.value);
+alert(inputPrenom.value);
 
 
 

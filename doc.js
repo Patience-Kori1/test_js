@@ -220,22 +220,22 @@
 
 ///////////////////// APPRENTISSAGE DES FONCTIONS
                     // Comprendre la portée des variables globale et locale
-const x = 1;
+// const x = 1;
 
-    function a() {
-      const y = 2;
-    }
+//     function a() {
+//       const y = 2;
+//     }
 
-    function b() {
-      const z = 3;
-    }
+//     function b() {
+//       const z = 3;
+//     }
 
-    function output(value) {
-      const para = document.createElement('p');
-      document.body.appendChild(para);
-      para.textContent = `Value: ${value}`;
-    }
-output(x);
+//     function output(value) {
+//       const para = document.createElement('p');
+//       document.body.appendChild(para);
+//       para.textContent = `Value: ${value}`;
+//     }
+// output(x);
 // output(y);
 
 
