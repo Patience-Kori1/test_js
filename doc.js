@@ -238,7 +238,48 @@
 // output(x);
 // output(y);
 
+// const str = "The quick brown fox jumps over the lazy dog.";
+// console.log(str.split(""));
 
+// var myString = "Hello World. How are you doing?";
+// var splits = myString.split("", 3);
+
+// console.log(splits);
+
+// let myData = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
+
+// let myArray = myData.split(",");
+// console.log(myArray);
+
+// Correction Exercice Doc MDN partie tableau :Affichage des produits et leurs prix dans la partie des tableaux sur la doc MD?"
+
+let products = [
+                'Caleçons:6.99',
+                'Chaussettes:5.99',
+                'T-shirt:14.99',
+                'Pantalons:31.99',
+                'Chaussures:23.99',
+            ];
+
+total=0;
+
+for ( let i = 0; i < products.length; i++) { 
+    // console.log(products[i]);
+    let product = products[i].split(":");
+    let price = parseFloat(product[1]);
+    let name = product[0];
+    console.log(`${name} coute : ${price} $`)
+    total += price
+
+}
+console.log(total);
+
+
+
+
+
+
+ 
 
 
 
