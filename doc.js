@@ -251,41 +251,70 @@
 // let myArray = myData.split(",");
 // console.log(myArray);
 
-// Correction Exercice Doc MDN partie tableau :Affichage des produits et leurs prix dans la partie des tableaux sur la doc MD?"
+// CORRECTION Exercice Doc MDN partie tableau :Affichage des produits et leurs prix dans la partie des tableaux sur la doc MD?"
 
-let products = [
-                'Caleçons:6.99',
-                'Chaussettes:5.99',
-                'T-shirt:14.99',
-                'Pantalons:31.99',
-                'Chaussures:23.99',
-            ];
+// let products = [
+//                 'Caleçons:6.99',
+//                 'Chaussettes:5.99',
+//                 'T-shirt:14.99',
+//                 'Pantalons:31.99',
+//                 'Chaussures:23.99',
+//             ];
 
-total=0;
+// total=0;
 
-for ( let i = 0; i < products.length; i++) { 
-    // console.log(products[i]);
-    let product = products[i].split(":");
-    let price = parseFloat(product[1]);
-    let name = product[0];
-    console.log(`${name} coute : ${price} $`)
-    total += price
+// for ( let i = 0; i < products.length; i++) { 
+//     // console.log(products[i]);
+//     let product = products[i].split(":");
+//     let price = parseFloat(product[1]);
+//     let name = product[0];
+//     // console.log(`${name} coute : ${price} $`)
+//     total += price
 
+// }
+// console.log(total);
+
+// TOUS LES MOYENS POUR PARCOURIR UN TABLEAU EN JS
+
+// Méthode classique avec la boucle FOR
+let fruits = ["Pomme", "Banane", "Mangue", "Orange"];
+let fruit = "Flag   ";
+for(i=0 ; i < fruits.length ; i++) {
+    console.log(fruits[i]);
+    fruit += `|    ${i} ==> ${fruits[i]}`;
 }
-console.log(total);
+console.log(fruit);
 
+//// /Avec FOR OF en affichant les valeurs seulement
+for (let fruit of fruits) {
+    console.log(fruit); 
+}
 
+/////// Avec FOR OF mais en stockant les données dans un tableau
+let a = -1;
+let hey = [];
+for (let fruit of fruits) {
+    a++
+    hey.push(fruits[a]);  
+}
+console.log(hey);
 
+//////// Avec FOREACH, prend en paramètre l'élément, l'index et le tableau
 
+// ForEach avec une fonction Function 
+fruits.forEach(function (fruit, index, fruits) { 
+    // console.log(fruits);
+    console.log(index, fruit)
+})
 
+// ForEach avec une fonction flechée
+fruits.forEach((fruit, index, fruits) => { 
+    console.log(fruits);
+    console.log(index)
+})
 
- 
-
-
-
-
-
-
+//////// Avec MAP()
+console.log(fruits.map((fruit, index, fruits) => `${index} => ${fruit} `));
 
 
 
