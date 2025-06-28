@@ -276,11 +276,17 @@
 
 // TOUS LES MOYENS POUR PARCOURIR UN TABLEAU EN JS
 
-// Méthode classique avec la boucle FOR
 let fruits = ["Pomme", "Banane", "Mangue", "Orange"];
+
+// Méthode classique avec la boucle FOR
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+// Méthode classique avec la boucle FOR avec un flag
 let fruit = "Flag   ";
 for(i=0 ; i < fruits.length ; i++) {
-    console.log(fruits[i]);
     fruit += `|    ${i} ==> ${fruits[i]}`;
 }
 console.log(fruit);
@@ -316,6 +322,11 @@ fruits.forEach((fruit, index, fruits) => {
 //////// Avec MAP()
 console.log(fruits.map((fruit, index, fruits) => `${index} => ${fruit} `));
 
+////// Avec FOR IN à éviter pour les tableau
+
+for (let index in fruits) {
+    console.log(`${index} : ${fruits[index]}`);
+}
 
 
 
