@@ -276,57 +276,92 @@
 
 // TOUS LES MOYENS POUR PARCOURIR UN TABLEAU EN JS
 
-let fruits = ["Pomme", "Banane", "Mangue", "Orange"];
+// let fruits = ["Pomme", "Banane", "Mangue", "Orange"];
 
-// Méthode classique avec la boucle FOR
+// // Méthode classique avec la boucle FOR
 
-for (let i = 0; i < fruits.length; i++) {
-    console.log(fruits[i]);
-}
+// for (let i = 0; i < fruits.length; i++) {
+//     console.log(fruits[i]);
+// }
 
-// Méthode classique avec la boucle FOR avec un flag
-let fruit = "Flag   ";
-for(i=0 ; i < fruits.length ; i++) {
-    fruit += `|    ${i} ==> ${fruits[i]}`;
-}
-console.log(fruit);
+// // Méthode classique avec la boucle FOR avec un flag
+// let fruit = "Flag   ";
+// for(i=0 ; i < fruits.length ; i++) {
+//     fruit += `|    ${i} ==> ${fruits[i]}`;
+// }
+// console.log(fruit);
 
-//// /Avec FOR OF en affichant les valeurs seulement
-for (let fruit of fruits) {
-    console.log(fruit); 
-}
+// //// /Avec FOR OF en affichant les valeurs seulement
+// for (let fruit of fruits) {
+//     console.log(fruit); 
+// }
 
-/////// Avec FOR OF mais en stockant les données dans un tableau
-let a = -1;
-let hey = [];
-for (let fruit of fruits) {
-    a++
-    hey.push(fruits[a]);  
-}
-console.log(hey);
+// /////// Avec FOR OF mais en stockant les données dans un tableau
+// let a = -1;
+// let hey = [];
+// for (let fruit of fruits) {
+//     a++
+//     hey.push(fruits[a]);  
+// }
+// console.log(hey);
 
-//////// Avec FOREACH, prend en paramètre l'élément, l'index et le tableau
+// //////// Avec FOREACH, prend en paramètre l'élément, l'index et le tableau
 
-// ForEach avec une fonction Function 
-fruits.forEach(function (fruit, index, fruits) { 
-    // console.log(fruits);
-    console.log(index, fruit)
+// // ForEach avec une fonction Function 
+// fruits.forEach(function (fruit, index, fruits) { 
+//     // console.log(fruits);
+//     console.log(index, fruit)
+// })
+
+// // ForEach avec une fonction flechée
+// fruits.forEach((fruit, index, fruits) => { 
+//     console.log(fruits);
+//     console.log(index)
+// })
+
+// //////// Avec MAP()
+// console.log(fruits.map((fruit, index, fruits) => `${index} => ${fruit} `));
+
+// ////// Avec FOR IN à éviter pour les tableau
+
+// for (let index in fruits) {
+//     console.log(`${index} : ${fruits[index]}`);
+// }
+
+//////////////// git commit -m "Toutes les méthodes pour parcourir des tableaux multidimensionnels"
+let tableau = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+// forEach pour les tableaux multidimensionels
+tableau.forEach((element, index, tableau) => {
+    console.log(tableau)
 })
 
-// ForEach avec une fonction flechée
-fruits.forEach((fruit, index, fruits) => { 
-    console.log(fruits);
-    console.log(index)
+tableau.forEach((element, index) => {
+    element.forEach((element2, index, element) => {
+        // console.log(element2)
+    })
 })
 
-//////// Avec MAP()
-console.log(fruits.map((fruit, index, fruits) => `${index} => ${fruit} `));
-
-////// Avec FOR IN à éviter pour les tableau
-
-for (let index in fruits) {
-    console.log(`${index} : ${fruits[index]}`);
+// La boucle for pour les tableaux multidimensionels
+for (let i = 0; i < tableau.length; i++) {
+  for (let j = 0; j < tableau[i].length; j++) {
+    console.log(tableau[i][j]);
+  }
 }
 
+// La boucle for of pour les tableaux multidimensionels
+for (let ligne of tableau) {
+  for (let valeur of ligne) {
+    console.log(valeur);
+  }
+}
+
+// map() pour les tableaux multidimensionels
+let doublés = tableau.map(ligne => ligne.map(val => val * 2));
+console.log(doublés);
 
 
