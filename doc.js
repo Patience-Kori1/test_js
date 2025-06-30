@@ -328,40 +328,65 @@
 //     console.log(`${index} : ${fruits[index]}`);
 // }
 
-//////////////// git commit -m "Toutes les méthodes pour parcourir des tableaux multidimensionnels"
-let tableau = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-];
+// //////////////// Toutes les méthodes pour parcourir des tableaux multidimensionnels"
+// let tableau = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
 
-// forEach pour les tableaux multidimensionels
-tableau.forEach((element, index, tableau) => {
-    console.log(tableau)
-})
+// // forEach pour les tableaux multidimensionels
+// tableau.forEach((element, index, tableau) => {
+//     console.log(tableau)
+// })
 
-tableau.forEach((element, index) => {
-    element.forEach((element2, index, element) => {
-        // console.log(element2)
-    })
-})
+// tableau.forEach((element, index) => {
+//     element.forEach((element2, index, element) => {
+//         // console.log(element2)
+//     })
+// })
 
-// La boucle for pour les tableaux multidimensionels
-for (let i = 0; i < tableau.length; i++) {
-  for (let j = 0; j < tableau[i].length; j++) {
-    console.log(tableau[i][j]);
-  }
+// // La boucle for pour les tableaux multidimensionels
+// for (let i = 0; i < tableau.length; i++) {
+//   for (let j = 0; j < tableau[i].length; j++) {
+//     console.log(tableau[i][j]);
+//   }
+// }
+
+// // La boucle for of pour les tableaux multidimensionels
+// for (let ligne of tableau) {
+//   for (let valeur of ligne) {
+//     console.log(valeur);
+//   }
+// }
+
+// // map() pour les tableaux multidimensionels
+// let doublés = tableau.map(ligne => ligne.map(val => val * 2));
+// console.log(doublés);
+
+// //////////////// Toutes les méthodes pour itérer et afficher les objets en JS"
+let personne = {
+  nom: "Nadège",
+  âge: 43,
+  métier: "hypnothérapeute"
+};
+
+///// For in pour les Objets
+for (let clé in personne) {
+//   console.log(`${clé} : ${personne[clé]}`);
 }
 
-// La boucle for of pour les tableaux multidimensionels
-for (let ligne of tableau) {
-  for (let valeur of ligne) {
-    console.log(valeur);
-  }
-}
+///// Object.keys() + forEach → Quand tu veux les clés
+Object.keys(personne).forEach(clef => {
+//   console.log(`${clef} : ${personne[clef]}`);
+});
 
-// map() pour les tableaux multidimensionels
-let doublés = tableau.map(ligne => ligne.map(val => val * 2));
-console.log(doublés);
+///// Object.values() → Quand tu veux juste les valeurs
+Object.values(personne).forEach(valeur => {
+//   console.log(valeur);
+});
 
-
+///// Object.entries() → Quand tu veux les paires clé/valeur
+Object.entries(personne).forEach(([clé, valeur]) => {
+  console.log(`${clé} : ${valeur}`);
+});
