@@ -365,28 +365,29 @@
 // console.log(doublés);
 
 // //////////////// Toutes les méthodes pour itérer et afficher les objets en JS"
-let personne = {
-  nom: "Nadège",
-  âge: 43,
-  métier: "hypnothérapeute"
-};
+// let personne = {
+//   nom: "Nadège",
+//   âge: 43,
+//   métier: "hypnothérapeute"
+// };
 
-///// For in pour les Objets
-for (let clé in personne) {
-//   console.log(`${clé} : ${personne[clé]}`);
-}
+// ///// For in pour les Objets
+// for (let clé in personne) {
+// //   console.log(`${clé} : ${personne[clé]}`);
+// }
 
-///// Object.keys() + forEach → Quand tu veux les clés
-Object.keys(personne).forEach(clef => {
-//   console.log(`${clef} : ${personne[clef]}`);
-});
+// ///// Object.keys() + forEach → Quand tu veux les clés
+// Object.keys(personne).forEach(clef => {
+// //   console.log(`${clef} : ${personne[clef]}`);
+// });
 
-///// Object.values() → Quand tu veux juste les valeurs
-Object.values(personne).forEach(valeur => {
-//   console.log(valeur);
-});
+// ///// Object.values() → Quand tu veux juste les valeurs
+// Object.values(personne).forEach(valeur => {
+// //   console.log(valeur);
+// });
 
-///// Object.entries() → Quand tu veux les paires clé/valeur
-Object.entries(personne).forEach(([clé, valeur]) => {
-  console.log(`${clé} : ${valeur}`);
-});
+// ///// Object.entries() → Quand tu veux les paires clé/valeur
+// Object.entries(personne).forEach(([clé, valeur]) => {
+//   console.log(`${clé} : ${valeur}`);
+// });
+

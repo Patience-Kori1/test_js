@@ -245,9 +245,9 @@
 
 // Correction de la partie A de l'exercice 9 sur le DOM
 
-let h1 = document.querySelector('h1');
-h1.textContent = "Ma page de test Java Script pour le cours de la formation";
-console.log(h1);
+// let h1 = document.querySelector('h1');
+// h1.textContent = "Ma page de test Java Script pour le cours de la formation";
+// console.log(h1);
 
 // Correction de l'exercice 9 sur le DOM. Partie B : la récupération des valeurs du formulaire
 
@@ -261,34 +261,35 @@ console.log(h1);
 
 // Correction de l'exercice 9 sur le DOM. Partie C : Calculatrice (Onclik + récup value form)
 
-let premierNombre = document.querySelector(".premierNombre");
-let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
-let button = document.querySelector(".button")
-let resultat = document.querySelector(".resultat");
+// let premierNombre = document.querySelector(".premierNombre");
+// let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
+// let button = document.querySelector(".button")
+// let resultat = document.querySelector(".resultat");
 
-button.onclick = function (){
+// button.onclick = function (){
 
-    let chiffreUn = parseFloat(premierNombre.value); 
-    let chiffreDeux = parseFloat(deuxiemeNombre.value);
+//     let chiffreUn = parseFloat(premierNombre.value); 
+//     let chiffreDeux = parseFloat(deuxiemeNombre.value);
 
-    if (isNaN(chiffreUn) || isNaN(chiffreDeux) ) {
-        premierNombre.value="";
-        deuxiemeNombre.value ="";
-        resultat.value = "Que des chiffres svp";
+//     if (isNaN(chiffreUn) || isNaN(chiffreDeux) ) {
+//         premierNombre.value="";
+//         deuxiemeNombre.value ="";
+//         resultat.value = "Que des chiffres svp";
 
-  } else {
-        resultat.value = chiffreUn + chiffreDeux;
-        premierNombre.value="";
-        deuxiemeNombre.value ="";
-    }
+//   } else {
+//         resultat.value = chiffreUn + chiffreDeux;
+//         premierNombre.value="";
+//         deuxiemeNombre.value ="";
+//     }
    
-}
+// }
 
+// Correction de l'exercice 10 A : Cacher - Afficher (Ajouter et retirer des class d'un élet HTML)
 
-
-
-
-
+let para2 = document.querySelector ('#second');
+console.log(para2);
+para2.classList.remove('hidden');
+console.log(para2);
          
 
 
