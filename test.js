@@ -284,13 +284,52 @@
    
 // }
 
-// Correction de l'exercice 10 A : Cacher - Afficher (Ajouter et retirer des class d'un élet HTML)
+// CORRECTION DE L4EXERCICE 10 A : Cacher - Afficher (Ajouter et retrait des class d'un élet HTML)
 
-let para2 = document.querySelector ('#second');
-console.log(para2);
-para2.classList.remove('hidden');
-console.log(para2);
+// let para2 = document.querySelector ('#second');
+// console.log(para2);
+// para2.classList.remove('hidden');
+// console.log(para2);
          
+// CORRECTION DE L4EXERCICE 10B: Cacher les spoiler (Ajouter et retrait des class d'un élet HTML à l'aide des boutons onclick)
+
+let section5 = document.querySelector(".section5");
+let buttonCacher = section5.querySelector(".cacher");
+let buttonAfficher = section5.querySelector(".afficher")
+
+// première possibilité un peu plus compliqué mais pas bon pour la maintenabilité
+let para = section5.querySelectorAll("p");
+buttonCacher.onclick = () => {    
+    for (let i=0; i < para.length ; i++) {
+        if(i === 1 || i === 2) {
+            para[i].classList.remove('spoiler');
+            para[i].classList.add('hidden');
+        }
+    }
+}
+buttonAfficher.onclick = () => {    
+    for (let i=0; i < para.length ; i++) {
+        if(i === 1 || i === 2) {
+            para[i].classList.remove('hidden');
+            para[i].classList.add('spoiler');
+        }
+    }
+}
+
+// Deuxième possiblité plus maintanable quand on est emmener à ajouter d'autres p
+let spoiler = section5.querySelectorAll(".spoiler")
+buttonCacher.onclick = function() {
+        for (let i=0 ; i < spoiler.length ; i++) {
+            spoiler[i].classList.remove('spoiler');
+            spoiler[i].classList.add('hidden');
+    }
+}
+buttonAfficher.onclick = function() {
+        for (let i=0 ; i < spoiler.length ; i++) {
+            spoiler[i].classList.remove('hidden');
+            spoiler[i].classList.add('spoiler');
+    }
+}
 
 
        
