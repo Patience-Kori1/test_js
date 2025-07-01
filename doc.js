@@ -391,3 +391,6 @@
 //   console.log(`${clé} : ${valeur}`);
 // });
 
+// MANIPULATION DES DOCUMENTS HTML EN JS
+
+

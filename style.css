@@ -1,3 +1,6 @@
+.container {
+    padding: 0 50px;
+}
 .section5 > .hidden {
     color :red;
     display: none;
