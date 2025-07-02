@@ -391,6 +391,16 @@
 //   console.log(`${clé} : ${valeur}`);
 // });
 
-// MANIPULATION DES DOCUMENTS HTML EN JS
+//////////// MANIPULATION DES DOCUMENTS HTML EN JS
 
 
+let link = document.querySelector("a"); // Récupérer et conserver la référence d'un élément <a> dans une varibale pour pouvoir le manipuler
+link.textContent = "Mozilla Developer Network"; // Modification du text d'un élément déjà récupéré
+link.href = "https://developer.mozilla.org"; // Modification du contenu d'un attribut d'un élément récupéré
+const sect = document.querySelector("section"); // Récupération de la référence de l'élément section
+let para = document.createElement('p'); // Création d'un nouveau d'un noeud pas encore affecté dans le DOM et dans le fichier HTML
+para.textContent = "Nous espérons que vous avez apprécié la balade."; // Création de son contenu
+sect.appendChild(para); // Affectation dans le DOM de l'élément p créé au dessu
+let text = document.createTextNode(" - la première source de connaissances en matière de développement Web.") // Création de noeud de text pas encore affecté au DOM
+let paraLink = document.querySelector('p');
+paraLink.appendChild(text); // Ajout d'un text conservé dans une variable noeud non affecté pour l'ajouter à un texte déjà existant dans un élément p du DOM
