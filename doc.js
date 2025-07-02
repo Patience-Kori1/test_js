@@ -404,3 +404,12 @@ sect.appendChild(para); // Affectation dans le DOM de l'élément p créé au de
 let text = document.createTextNode(" - la première source de connaissances en matière de développement Web.") // Création de noeud de text pas encore affecté au DOM
 let paraLink = document.querySelector('p');
 paraLink.appendChild(text); // Ajout d'un text conservé dans une variable noeud non affecté pour l'ajouter à un texte déjà existant dans un élément p du DOM
+
+// Déplacer et supprimer les élements
+sect.appendChild(paraLink); // Pour déplacer l'élément paraLink en bas de la section
+let para2 = para.cloneNode(true); // Pour cloner l'élément para, il reste jusque là un noeud et pas un élement. Il devient un élément (noeuf affecté), à partir du moment où on l'attache au DOM avec appendChild 
+sect.appendChild(para2); // affecter dans le DOM le noeud créé en dessus et qui devient un élement
+sect.removeChild(para); // Premier moyen de suppression par son parent
+// para.remove() // Deuxième moyen de suppression par l'élément seulement.
+// para.parentNode.removeChild(para); // / Variante : suppression via parentNode.removeChild()
+
