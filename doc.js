@@ -413,3 +413,20 @@ sect.removeChild(para); // Premier moyen de suppression par son parent
 // para.remove() // Deuxième moyen de suppression par l'élément seulement.
 // para.parentNode.removeChild(para); // / Variante : suppression via parentNode.removeChild()
 
+/////Manipuler le style d'un document HTML en JS
+console.log(document.styleSheets);
+
+// Première méthode du style en ligne 
+// para2.style.backgroundColor = "#c8f193";
+// para2.style.color = "#db9696";
+// para2.style.fontWeight = "900"
+// para2.style.padding = "10px";
+// para2.style.width = "250px";
+// para2.style.textAlign = "center";
+// console.log(para2.attributes[0]);
+
+// Deuxième méthode
+para2.setAttribute("class", "highlight");
+console.log(para2);
+
+
