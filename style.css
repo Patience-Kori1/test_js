@@ -20,3 +20,6 @@ section {
     color :red;
     display: none;
 }
+.imgArticle {
+    width: 10rem;
+}
