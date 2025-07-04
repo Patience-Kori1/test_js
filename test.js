@@ -340,9 +340,9 @@ let titreTubercules = document.querySelector(".titreTubercules");
 let titreLegumineuses = document.querySelector(".titreLegumineuses");
 let titreCereales = document.querySelector(".titreCereales");
 
-articles.forEach(function (element, index) {
+articles.forEach(function (element) {
             element.style.display = "none";
-        }  
+    }  
 )
 titreArticles.onclick = function() {    
     articles.forEach(function (element, index) {
@@ -351,78 +351,37 @@ titreArticles.onclick = function() {
 }
 titreFruits.onclick = function() {     
     articles.forEach(function (element, index) {
-        
-        if (element.classList.contains("fruit") || 
-            element.classList.contains("legume_fruit") ||
-            element.classList.contains("fruit_legume")
-        ){
-            element.style.display = "block";
-            console.log(element);
-        } else {
-            element.style.display = "none";
-        }     
+        element.classList.contains("fruit") || 
+        element.classList.contains("legume_fruit") ||
+        element.classList.contains("fruit_legume")? element.style.display = "block" : element.style.display = "none";  
    }); 
 }
 titreLegumes.onclick = function() {     
     articles.forEach(function (element, index) {  
-        if (
             element.classList.contains("legume") || 
             element.classList.contains("legume_fruit")||
             element.classList.contains("tubercule_legume")||
             element.classList.contains("legumineuse_legume") ||
             element.classList.contains("cereale_legume")||
-            element.classList.contains("fruit_legume")
-        ){
-            element.style.display = "block";
-            console.log(element);
-        } else {
-            element.style.display = "none";
-        }     
+            element.classList.contains("fruit_legume") ?
+            element.style.display = "block" : element.style.display = "none";
    });  
 }
-
 titreTubercules.onclick = function() {     
     articles.forEach(function (element, index) {
-        
-        if (element.classList.contains("tubercule") || 
-            element.classList.contains("tubercule_legume")
-        ){
-            element.style.display = "block";
-            console.log(element);
-        } else {
-            element.style.display = "none";
-        }     
+        element.classList.contains("tubercule") || element.classList.contains("tubercule_legume") ? element.style.display = "block": element.style.display = "none";  
    });
-   
+}
+titreLegumineuses.onclick = function() {     
+    articles.forEach(function (element) {
+        element.classList.contains("legumineuse") || element.classList.contains("legumineuse_legume") || element.classList.contains("legumineuse_cereale") ? element.style.display = "block": element.style.display = "none";  
+   });
 }
 titreCereales.onclick = function() {     
-    articles.forEach(function (element, index) {
-        
-        if (element.classList.contains("legumineuse") || 
-            element.classList.contains("legumineuse_legume") ||
-            element.classList.contains("legumineuse_cereale")
-        ){
-            element.style.display = "block";
-            console.log(element);
-        } else {
-            element.style.display = "none";
-        }     
-   });
-   
-}
-titreTubercules.onclick = function() {     
-    articles.forEach(function (element, index) {
-        
-        if (element.classList.contains("cereale") || 
-            element.classList.contains("cereale_legume")
-        ){
-            element.style.display = "block";
-            console.log(element);
-        } else {
-            element.style.display = "none";
-        }     
+    articles.forEach((element) => {
+       element.classList.contains("cereale") || element.classList.contains("cereale_legume") ? element.style.display = "block" : element.style.display = "none";
    });  
 }
 
-
+console.log()
        
