@@ -261,28 +261,28 @@
 
 // Correction de l'exercice 9 sur le DOM. Partie C : Calculatrice (Onclik + récup value form)
 
-// let premierNombre = document.querySelector(".premierNombre");
-// let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
-// let button = document.querySelector(".button")
-// let resultat = document.querySelector(".resultat");
+let premierNombre = document.querySelector(".premierNombre");
+let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
+let button = document.querySelector(".button")
+let resultat = document.querySelector(".resultat");
 
-// button.onclick = function (){
+button.onclick = function (){
 
-//     let chiffreUn = parseFloat(premierNombre.value); 
-//     let chiffreDeux = parseFloat(deuxiemeNombre.value);
+    let chiffreUn = parseFloat(premierNombre.value); 
+    let chiffreDeux = parseFloat(deuxiemeNombre.value);
 
-//     if (isNaN(chiffreUn) || isNaN(chiffreDeux) ) {
-//         premierNombre.value="";
-//         deuxiemeNombre.value ="";
-//         resultat.value = "Que des chiffres svp";
+    if (isNaN(chiffreUn) || isNaN(chiffreDeux) ) {
+        premierNombre.value="";
+        deuxiemeNombre.value ="";
+        resultat.value = "Que des chiffres svp";
 
-//   } else {
-//         resultat.value = chiffreUn + chiffreDeux;
-//         premierNombre.value="";
-//         deuxiemeNombre.value ="";
-//     }
+  } else {
+        resultat.value = `${chiffreUn} + ${chiffreDeux} est égale à ${chiffreUn + chiffreDeux}`;
+        premierNombre.value="";
+        deuxiemeNombre.value ="";
+    }
    
-// }
+}
 
 // CORRECTION DE L4EXERCICE 10 A : Cacher - Afficher (Ajouter et retrait des class d'un élet HTML)
 
@@ -318,6 +318,7 @@ buttonAfficher.onclick = () => {
 
 // Deuxième possiblité plus maintanable quand on est emmener à ajouter d'autres p
 let spoiler = section5.querySelectorAll(".spoiler")
+console.log(spoiler)
 buttonCacher.onclick = function() {
         for (let i=0 ; i < spoiler.length ; i++) {
             spoiler[i].classList.remove('spoiler');
@@ -329,6 +330,98 @@ buttonAfficher.onclick = function() {
             spoiler[i].classList.remove('hidden');
             spoiler[i].classList.add('spoiler');
     }
+}
+//Correction Exercice 10 C DOM : Filtrage par catégorie
+let articles = document.querySelectorAll("article");
+let titreArticles = document.querySelector(".titreArticles");
+let titreFruits = document.querySelector(".titreFruits");
+let titreLegumes = document.querySelector(".titreLegumes");
+let titreTubercules = document.querySelector(".titreTubercules");
+let titreLegumineuses = document.querySelector(".titreLegumineuses");
+let titreCereales = document.querySelector(".titreCereales");
+
+articles.forEach(function (element, index) {
+            element.style.display = "none";
+        }  
+)
+titreArticles.onclick = function() {    
+    articles.forEach(function (element, index) {
+                element.style.display = "block";
+            })
+}
+titreFruits.onclick = function() {     
+    articles.forEach(function (element, index) {
+        
+        if (element.classList.contains("fruit") || 
+            element.classList.contains("legume_fruit") ||
+            element.classList.contains("fruit_legume")
+        ){
+            element.style.display = "block";
+            console.log(element);
+        } else {
+            element.style.display = "none";
+        }     
+   }); 
+}
+titreLegumes.onclick = function() {     
+    articles.forEach(function (element, index) {  
+        if (
+            element.classList.contains("legume") || 
+            element.classList.contains("legume_fruit")||
+            element.classList.contains("tubercule_legume")||
+            element.classList.contains("legumineuse_legume") ||
+            element.classList.contains("cereale_legume")||
+            element.classList.contains("fruit_legume")
+        ){
+            element.style.display = "block";
+            console.log(element);
+        } else {
+            element.style.display = "none";
+        }     
+   });  
+}
+
+titreTubercules.onclick = function() {     
+    articles.forEach(function (element, index) {
+        
+        if (element.classList.contains("tubercule") || 
+            element.classList.contains("tubercule_legume")
+        ){
+            element.style.display = "block";
+            console.log(element);
+        } else {
+            element.style.display = "none";
+        }     
+   });
+   
+}
+titreCereales.onclick = function() {     
+    articles.forEach(function (element, index) {
+        
+        if (element.classList.contains("legumineuse") || 
+            element.classList.contains("legumineuse_legume") ||
+            element.classList.contains("legumineuse_cereale")
+        ){
+            element.style.display = "block";
+            console.log(element);
+        } else {
+            element.style.display = "none";
+        }     
+   });
+   
+}
+titreTubercules.onclick = function() {     
+    articles.forEach(function (element, index) {
+        
+        if (element.classList.contains("cereale") || 
+            element.classList.contains("cereale_legume")
+        ){
+            element.style.display = "block";
+            console.log(element);
+        } else {
+            element.style.display = "none";
+        }     
+   });  
 }
 
 
