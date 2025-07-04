@@ -383,5 +383,9 @@ titreCereales.onclick = function() {
    });  
 }
 
-console.log()
+//Installation et Utilisation de Sweet Alert
+let btn = document.querySelector(".hey");
+btn.onclick = function(){
+    swal("Bonjour seweet alert heheehe ");
+}
        
