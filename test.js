@@ -391,6 +391,29 @@ btnSweetAlert.onclick = function(){
 
 // Correction Exercice 12 A : Caroussel  ==> Composant Web
 
+let imgs =[
+    "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" , 
+    "https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/c/f/8/cf8ee0537a_121131_agriculture-bio-france.jpg",
+    "https://media.lesechos.com/api/v1/images/view/6739a9a9abfeb7120026a127/1280x720/0130318617588-web-tete.jpg"
+
+]
+let img1 = document.querySelector(".imgCaroussel");
+img1.setAttribute("src", imgs[0] );
+let btnCaroussel = document.querySelector(".btnCaroussel");
+console.log(img1.getAttribute("src"));
+//  for (let i=0 ; i<imgs.length; i++ ) {
+//         console.log(imgs[i])
+//     }
+
+  
+// btnCaroussel.onclick = function() {
+//           imgs.forEach(function(img, index) {
+//          if(img1.getAttribute("src") === img ) {
+//             img1.setAttribute("src", i )
+//          }
+//     })
 
 
-       
+
+
+    

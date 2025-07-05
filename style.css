@@ -83,7 +83,9 @@ h5 {
 
 .section8 img {
     background-color: azure;
-    width: 10rem;
-    height: 10rem;
+    width: 20rem;
+    height: 20rem;
+     border-radius: 1rem;
+    border: 1px solid white;
 }
 
