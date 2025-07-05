@@ -20,9 +20,10 @@ section {
     width: 100%;
     border-radius: 2rem;
 }
-.section5, .section4, .section3, .section2, .section7 {
+.section5, .section4, .section3, .section2, .section7, .section8 {
     border: 2px solid white;
     padding: 1rem 2rem;
+    gap:1rem;
 }
 .titreExercice {
     background-color:#718656;
@@ -78,5 +79,11 @@ h5 {
 .section5 > .hidden {
     color :red;
     display: none;
+}
+
+.section8 img {
+    background-color: azure;
+    width: 10rem;
+    height: 10rem;
 }
 

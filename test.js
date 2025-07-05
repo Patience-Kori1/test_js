@@ -384,8 +384,13 @@ titreCereales.onclick = function() {
 }
 
 //Installation et Utilisation de Sweet Alert
-let btn = document.querySelector(".hey");
-btn.onclick = function(){
-    swal("Bonjour seweet alert heheehe ");
+let btnSweetAlert = document.querySelector(".btnSweetAlert");
+btnSweetAlert.onclick = function(){
+    swal("Bonjour sweet alert heheehe ");
 }
+
+// Correction Exercice 12 A : Caroussel  ==> Composant Web
+
+
+
        
