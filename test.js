@@ -400,21 +400,29 @@ let img1 = document.querySelector(".imgCaroussel");
 img1.setAttribute("src", imgs[0] );
 let btnCaroussel = document.querySelector(".btnCaroussel");
 let lien = img1.getAttribute("src");
-let i = imgs.indexOf(lien);
-console.log(lien)
-console.log(i)
+// let i = imgs.indexOf(lien);
 
-btnCaroussel.onclick = function() {
-    imgs.forEach(function(element, index,tableau){
-    if(lien === element){
-        i += 1;
-        img1.setAttribute("src", imgs[i] )
+// première solution pas optimisé
+// btnCaroussel.onclick = function() {
+//     imgs.forEach(function(element, index,tableau){
+//     if(lien === element){
+//         i += 1;
+//         img1.setAttribute("src", imgs[i] )
     
-    } else if (i === 3) {
-        i = 0
-       img1.setAttribute("src", imgs[0]);
-    }
-})
-}
+//     } else if (i === 3) {
+//         i = 0
+//        img1.setAttribute("src", imgs[0]);
+//     }
+// })
+// }
+
+// Deuxième méthode plus optimisé avec l'usage du modulo
+let i = 0;
+img1.setAttribute("src", imgs[i]);
+
+btnCaroussel.onclick = function () {
+  i = (i + 1) % imgs.length;
+  img1.setAttribute("src", imgs[i]);
+};
 
     
