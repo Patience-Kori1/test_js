@@ -464,6 +464,20 @@ btnPrevent.onclick = () => {
 //   console.log(i);
 // };
 
+//Correction Exercice 12 B : Caroussel  avec setInterval : Navigation par un minuteur
+function start() {
+  i = (i + 1) % imgs.length;
+  img2.setAttribute("src", imgs[i]);
+  console.log(img1.getAttribute("src"))
+  console.log(i)
+};
+let setIntervalID = 0
+btnStart.onclick = () => {
+    setIntervalID = setInterval(start, 2000)
+}
+btnStop.onclick = () => {
+    clearInterval(setIntervalID)
+}
 
 
 
