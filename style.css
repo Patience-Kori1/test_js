@@ -88,4 +88,10 @@ h5 {
      border-radius: 1rem;
     border: 1px solid white;
 }
+.section8 div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
 

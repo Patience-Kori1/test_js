@@ -391,38 +391,61 @@ btnSweetAlert.onclick = function(){
 
 // Correction Exercice 12 A : Caroussel  ==> Composant Web
 
-let imgs =[
-    "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" , 
+let imgs = [
+    "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" ,
+    "https://www.shutterstock.com/shutterstock/photos/2141866355/display_1500/stock-photo-portrait-of-an-african-worker-in-the-nursery-happy-in-the-greenhouse-looking-at-camera-2141866355.jpg", 
     "https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/c/f/8/cf8ee0537a_121131_agriculture-bio-france.jpg",
-    "https://media.lesechos.com/api/v1/images/view/6739a9a9abfeb7120026a127/1280x720/0130318617588-web-tete.jpg"
+    "https://www.shutterstock.com/shutterstock/photos/1799476213/display_1500/stock-photo-peruvian-woman-working-on-vegetable-plantation-on-spring-day-carrying-plastic-box-with-freshly-1799476213.jpg",
+    "https://media.istockphoto.com/id/1278596068/fr/photo/jeune-jardinier-f%C3%A9minin-heureux-affichant-la-r%C3%A9colte-riche-des-l%C3%A9gumes.jpg?s=2048x2048&w=is&k=20&c=1LDFLQYSF1OXzB4tFWTRX_g9MDGrJNsjHuSeNfmVNvc=",
+    "https://media.istockphoto.com/id/949395206/fr/photo/agriculteur-r%C3%A9colte-des-feuilles-de-laitue.jpg?s=2048x2048&w=is&k=20&c=k6hFSFLaFWz6cWhIkcWBCH9xnFP7En0Gpb0EiPtVsIg=",
+    "https://www.shutterstock.com/shutterstock/photos/2198300493/display_1500/stock-photo-skilled-african-american-horticulturist-harvesting-young-and-tender-leaves-of-green-chard-in-farm-2198300493.jpg",
+    "https://media.istockphoto.com/id/1149217196/fr/photo/agriculteur-contr%C3%B4lant-des-semis-de-tomate-avec-la-tablette-num%C3%A9rique-dans-la-serre-chaude.webp?s=2048x2048&w=is&k=20&c=7Ym-gwsqzULM3_pMGt1g6NtO3m4JD6IVqlZqJ8C0Viw=",
+    "https://media.istockphoto.com/id/498799522/fr/photo/homme-souriant-dans-les-vignobles.webp?s=2048x2048&w=is&k=20&c=fsA2N1SoOhOxCCDlO5B-E6LdIZ0y1MKTCxcqnii7dYc=",
+    "https://media.istockphoto.com/id/1690922108/fr/photo/agricultrice-travaillant-dans-le-jardinage-un-jardinier-collecte-un-panier-de-l%C3%A9gumes.jpg?s=2048x2048&w=is&k=20&c=oj3Nk3peqka4yQYNb9LQS03oyuazhhma2bu8qcOXIZ8=",
+    "https://www.shutterstock.com/shutterstock/photos/2208176163/display_1500/stock-photo-african-american-standing-in-garden-he-s-holding-crate-of-ripe-peaches-2208176163.jpg",
+
 ]
 let img1 = document.querySelector(".imgCaroussel");
 img1.setAttribute("src", imgs[0] );
-let btnCaroussel = document.querySelector(".btnCaroussel");
+let btnNext = document.querySelector(".btnNext");
+let btnPrevent = document.querySelector(".btnPrevent")
 let lien = img1.getAttribute("src");
-// let i = imgs.indexOf(lien);
 
-// première solution pas optimisé
-// btnCaroussel.onclick = function() {
-//     imgs.forEach(function(element, index,tableau){
-//     if(lien === element){
-//         i += 1;
-//         img1.setAttribute("src", imgs[i] )
-    
-//     } else if (i === 3) {
-//         i = 0
-//        img1.setAttribute("src", imgs[0]);
-//     }
-// })
-// }
+// première solution pas optimisée
 
-// Deuxième méthode plus optimisé avec l'usage du modulo
-let i = 0;
-img1.setAttribute("src", imgs[i]);
+// Bouton next
+let i = 0
+btnNext.onclick = () => {
+imgs.forEach((element)=> {
+    if( lien === element) {
+         i += 1,
+        img1.setAttribute("src", imgs[i])
+        console.log(img1.getAttribute("src"))
+        console.log(i)
+    } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
+        img1.setAttribute("src", imgs[10])
+        i = -1;
+    }
+})
+}
+// Bouton Prevent
+a = 11;
+btnPrevent.onclick = () => {
+    imgs.forEach((element)=> {
+        if( lien === element) {
+            a = a-1
+            img1.setAttribute("src", imgs[a])
+            console.log(img1.getAttribute("src"))
+            console.log(a)
+        } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
+            img1.setAttribute("src", imgs[0])
+            a = 11;
+        }
+    })
+}
 
-btnCaroussel.onclick = function () {
-  i = (i + 1) % imgs.length;
-  img1.setAttribute("src", imgs[i]);
-};
+console.log(imgs)
 
-    
+
+
+
