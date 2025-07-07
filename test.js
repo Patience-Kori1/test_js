@@ -405,60 +405,65 @@ let imgs = [
     "https://www.shutterstock.com/shutterstock/photos/2208176163/display_1500/stock-photo-african-american-standing-in-garden-he-s-holding-crate-of-ripe-peaches-2208176163.jpg",
 
 ]
-let img1 = document.querySelector(".imgCaroussel");
+let img1 = document.querySelector(".imgCaroussel1");
+let img2 = document.querySelector(".imgCaroussel2");
 img1.setAttribute("src", imgs[0] );
+img2.setAttribute("src", imgs[0] );
 let btnNext = document.querySelector(".btnNext");
-let btnPrevent = document.querySelector(".btnPrevent")
+let btnPrevent = document.querySelector(".btnPrevent");
+let btnStart = document.querySelector(".btnStart");
+let btnStop = document.querySelector(".btnStop");
 let lien = img1.getAttribute("src");
 
 // Première solution pas optimisée
 
 // Bouton next
-// let i = 0
-// btnNext.onclick = () => {
-// imgs.forEach((element)=> {
-//     if( lien === element) {
-//          i += 1,
-//         img1.setAttribute("src", imgs[i])
-//         console.log(img1.getAttribute("src"))
-//         console.log(i)
-//     } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
-//         img1.setAttribute("src", imgs[10])
-//         i = -1;
-//     }
-// })
-// }
-// Bouton Prevent
-// a = 11;
-// btnPrevent.onclick = () => {
-//     imgs.forEach((element)=> {
-//         if( lien === element) {
-//             a = a-1
-//             img1.setAttribute("src", imgs[a])
-//             console.log(img1.getAttribute("src"))
-//             console.log(a)
-//         } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
-//             img1.setAttribute("src", imgs[0])
-//             a = 11;
-//         }
-//     })
-// }
-
+let i = 0
+btnNext.onclick = () => {
+imgs.forEach((element)=> {
+    if( lien === element) {
+         i += 1,
+        img1.setAttribute("src", imgs[i])
+        console.log(img1.getAttribute("src"))
+        console.log(i)
+    } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
+        img1.setAttribute("src", imgs[10])
+        i = -1;
+    }
+})
+}
+//Bouton Prevent
+a = 11;
+btnPrevent.onclick = () => {
+    imgs.forEach((element)=> {
+        if( lien === element) {
+            a = a-1
+            img1.setAttribute("src", imgs[a])
+            console.log(img1.getAttribute("src"))
+            console.log(a)
+        } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
+            img1.setAttribute("src", imgs[0])
+            a = 11;
+        }
+    })
+}
 // Deuxième solution optimisée avec modulo %
-let i = 0;
-img1.setAttribute("src", imgs[i]);
-btnNext.onclick = function () {
-  i = (i + 1) % imgs.length;
-  img1.setAttribute("src", imgs[i]);
-  console.log(img1.getAttribute("src"))
-  console.log(i)
-};
+// let i = 0;
+// img1.setAttribute("src", imgs[i]);
+// btnNext.onclick = function () {
+//   i = (i + 1) % imgs.length;
+//   img1.setAttribute("src", imgs[i]);
+//   console.log(img1.getAttribute("src"))
+//   console.log(i)
+// };
 
-btnPrevent.onclick = function () {
-  i = (i - 1 + imgs.length) % imgs.length;
-  img1.setAttribute("src", imgs[i]);
-  console.log(img1.getAttribute("src"));
-  console.log(i);
-};
+// btnPrevent.onclick = function () {
+//   i = (i - 1 + imgs.length) % imgs.length;
+//   img1.setAttribute("src", imgs[i]);
+//   console.log(img1.getAttribute("src"));
+//   console.log(i);
+// };
+
+
 
 
