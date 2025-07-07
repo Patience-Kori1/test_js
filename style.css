@@ -80,11 +80,10 @@ h5 {
     color :red;
     display: none;
 }
-
 .section8 img {
     background-color: azure;
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
      border-radius: 1rem;
     border: 1px solid white;
 }

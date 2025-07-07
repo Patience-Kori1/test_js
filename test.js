@@ -411,41 +411,54 @@ let btnNext = document.querySelector(".btnNext");
 let btnPrevent = document.querySelector(".btnPrevent")
 let lien = img1.getAttribute("src");
 
-// première solution pas optimisée
+// Première solution pas optimisée
 
 // Bouton next
-let i = 0
-btnNext.onclick = () => {
-imgs.forEach((element)=> {
-    if( lien === element) {
-         i += 1,
-        img1.setAttribute("src", imgs[i])
-        console.log(img1.getAttribute("src"))
-        console.log(i)
-    } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
-        img1.setAttribute("src", imgs[10])
-        i = -1;
-    }
-})
-}
+// let i = 0
+// btnNext.onclick = () => {
+// imgs.forEach((element)=> {
+//     if( lien === element) {
+//          i += 1,
+//         img1.setAttribute("src", imgs[i])
+//         console.log(img1.getAttribute("src"))
+//         console.log(i)
+//     } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
+//         img1.setAttribute("src", imgs[10])
+//         i = -1;
+//     }
+// })
+// }
 // Bouton Prevent
-a = 11;
-btnPrevent.onclick = () => {
-    imgs.forEach((element)=> {
-        if( lien === element) {
-            a = a-1
-            img1.setAttribute("src", imgs[a])
-            console.log(img1.getAttribute("src"))
-            console.log(a)
-        } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
-            img1.setAttribute("src", imgs[0])
-            a = 11;
-        }
-    })
-}
+// a = 11;
+// btnPrevent.onclick = () => {
+//     imgs.forEach((element)=> {
+//         if( lien === element) {
+//             a = a-1
+//             img1.setAttribute("src", imgs[a])
+//             console.log(img1.getAttribute("src"))
+//             console.log(a)
+//         } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
+//             img1.setAttribute("src", imgs[0])
+//             a = 11;
+//         }
+//     })
+// }
 
-console.log(imgs)
+// Deuxième solution optimisée avec modulo %
+let i = 0;
+img1.setAttribute("src", imgs[i]);
+btnNext.onclick = function () {
+  i = (i + 1) % imgs.length;
+  img1.setAttribute("src", imgs[i]);
+  console.log(img1.getAttribute("src"))
+  console.log(i)
+};
 
-
+btnPrevent.onclick = function () {
+  i = (i - 1 + imgs.length) % imgs.length;
+  img1.setAttribute("src", imgs[i]);
+  console.log(img1.getAttribute("src"));
+  console.log(i);
+};
 
 
