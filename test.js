@@ -249,7 +249,7 @@
 // h1.textContent = "Ma page de test Java Script pour le cours de la formation";
 // console.log(h1);
 
-// Correction de l'exercice 9 sur le DOM. Partie B : la récupération des valeurs du formulaire
+// SECTION 2 : Exercice 9 B DOM : Récupération des valeurs du formulaire
 
 // let inputNom = document.querySelector('.nom');
 // let inputPrenom = document.querySelector('.prenom');
@@ -259,7 +259,7 @@
 // alert(inputNom.value);
 // alert(inputPrenom.value);
 
-// Correction de l'exercice 9 sur le DOM. Partie C : Calculatrice (Onclik + récup value form)
+// SECTION 3 : Exercice 9 C DOM : Calculatrice (Onclik + récup value form)
 
 let premierNombre = document.querySelector(".premierNombre");
 let deuxiemeNombre = document.querySelector(".deuxiemeNombre");
@@ -284,14 +284,14 @@ button.onclick = function (){
    
 }
 
-// CORRECTION DE L4EXERCICE 10 A : Cacher - Afficher (Ajouter et retrait des class d'un élet HTML)
+// SECTION 4 : Exercice 10 A DOM : Cacher ou afficher un élément html
 
 // let para2 = document.querySelector ('#second');
 // console.log(para2);
 // para2.classList.remove('hidden');
 // console.log(para2);
          
-// CORRECTION DE L4EXERCICE 10B: Cacher les spoiler (Ajouter et retrait des class d'un élet HTML à l'aide des boutons onclick)
+// SECTION 5 : Exercice 10 B DOM : Cacher le Spoiler
 
 let section5 = document.querySelector(".section5");
 let buttonCacher = section5.querySelector(".cacher");
@@ -331,7 +331,7 @@ buttonAfficher.onclick = function() {
             spoiler[i].classList.add('spoiler');
     }
 }
-//Correction Exercice 10 C DOM : Filtrage par catégorie
+// SECTION 6 : Exercice 10 C DOM : Filtrage par catégorie
 let articles = document.querySelectorAll("article");
 let titreArticles = document.querySelector(".titreArticles");
 let titreFruits = document.querySelector(".titreFruits");
@@ -389,7 +389,7 @@ btnSweetAlert.onclick = function(){
     swal("Bonjour sweet alert heheehe ");
 }
 
-// Correction Exercice 12 A : Caroussel  ==> Composant Web
+// SECTION 8 Exercice 12 A : Caroussel  ==> Composant Web
 
 let imgs = [
     "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" ,
@@ -418,36 +418,36 @@ let lien = img1.getAttribute("src");
 // Première solution pas optimisée
 
 // Bouton next
-let i = 0
+let j = 0
 btnNext.onclick = () => {
 imgs.forEach((element)=> {
     if( lien === element) {
-         i += 1,
-        img1.setAttribute("src", imgs[i])
-        console.log(img1.getAttribute("src"))
-        console.log(i)
+         j += 1,
+        img1.setAttribute("src", imgs[j])
     } else if ( img1.getAttribute("src") === imgs[imgs.length -1] ) { // ou i === 10
         img1.setAttribute("src", imgs[10])
-        i = -1;
+        j = -1;
     }
 })
 }
-//Bouton Prevent
+
+// Bouton Prevent
 a = 11;
 btnPrevent.onclick = () => {
     imgs.forEach((element)=> {
         if( lien === element) {
             a = a-1
             img1.setAttribute("src", imgs[a])
-            console.log(img1.getAttribute("src"))
-            console.log(a)
         } else if ( a === 0 ) { // ou img1.getAttribute("src") === imgs[0]
             img1.setAttribute("src", imgs[0])
             a = 11;
         }
     })
 }
+
 // Deuxième solution optimisée avec modulo %
+
+// Bouton next
 // let i = 0;
 // img1.setAttribute("src", imgs[i]);
 // btnNext.onclick = function () {
@@ -457,6 +457,7 @@ btnPrevent.onclick = () => {
 //   console.log(i)
 // };
 
+// Bouton Prevent
 // btnPrevent.onclick = function () {
 //   i = (i - 1 + imgs.length) % imgs.length;
 //   img1.setAttribute("src", imgs[i]);
@@ -464,7 +465,8 @@ btnPrevent.onclick = () => {
 //   console.log(i);
 // };
 
-//Correction Exercice 12 B : Caroussel  avec setInterval : Navigation par un minuteur
+// SECTION 9 : Exercice 12 B : Caroussel  navigation image avec setInterval
+let i = 0;
 function start() {
   i = (i + 1) % imgs.length;
   img2.setAttribute("src", imgs[i]);
@@ -478,6 +480,8 @@ btnStart.onclick = () => {
 btnStop.onclick = () => {
     clearInterval(setIntervalID)
 }
+
+
 
 
 
