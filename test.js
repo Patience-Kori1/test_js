@@ -481,6 +481,46 @@ btnStop.onclick = () => {
     clearInterval(setIntervalID)
 }
 
+// SECTION 10 : Exercice 12 C : Composant Caroussel Réutilisable
+let imgComponent = document.querySelector(".imgComponent");
+function caroussel ( a, b, c, d) {
+    let array = [""]
+    a = array.push(a);
+    b = array.push(b);
+    c = array.push(c);
+    d = array.push(d);
+
+    let i = 0;
+    let lien = imgComponent.getAttribute("src");
+    
+    function start(){
+          
+        array.forEach((element)=> {
+            if( lien === element) {
+                i += 1,
+                imgComponent.setAttribute("src", array[i])
+                // console.log(array[i])
+                // console.log(i)
+                // console.log(array.indexOf(array[i]))
+            } else if ( i === array.length -1 ) { 
+                imgComponent.setAttribute("src", array[array.length -1])
+                i = 0;
+            }
+        })
+    }
+
+    let setIntervalID = setInterval(start, 2000)
+}
+
+caroussel (
+    "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" ,
+    "https://www.shutterstock.com/shutterstock/photos/2141866355/display_1500/stock-photo-portrait-of-an-african-worker-in-the-nursery-happy-in-the-greenhouse-looking-at-camera-2141866355.jpg", 
+    "https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/c/f/8/cf8ee0537a_121131_agriculture-bio-france.jpg",
+    "https://www.shutterstock.com/shutterstock/photos/1799476213/display_1500/stock-photo-peruvian-woman-working-on-vegetable-plantation-on-spring-day-carrying-plastic-box-with-freshly-1799476213.jpg"
+    
+)
+
+
 
 
 
