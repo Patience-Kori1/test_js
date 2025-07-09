@@ -470,8 +470,8 @@ let i = 0;
 function start() {
   i = (i + 1) % imgs.length;
   img2.setAttribute("src", imgs[i]);
-  console.log(img1.getAttribute("src"))
-  console.log(i)
+  img1.getAttribute("src")
+//   console.log(i)
 };
 let setIntervalID = 0
 btnStart.onclick = () => {
@@ -484,17 +484,15 @@ btnStop.onclick = () => {
 // SECTION 10 : Exercice 12 C : Composant Caroussel Réutilisable
 let imgComponent = document.querySelector(".imgComponent");
 function caroussel ( a, b, c, d) {
-    let array = [""]
+    let array = []
     a = array.push(a);
     b = array.push(b);
     c = array.push(c);
     d = array.push(d);
-
     let i = 0;
+    imgComponent.setAttribute("src", array[i])
     let lien = imgComponent.getAttribute("src");
-    
     function start(){
-          
         array.forEach((element)=> {
             if( lien === element) {
                 i += 1,
@@ -504,11 +502,10 @@ function caroussel ( a, b, c, d) {
                 // console.log(array.indexOf(array[i]))
             } else if ( i === array.length -1 ) { 
                 imgComponent.setAttribute("src", array[array.length -1])
-                i = 0;
+                i = -1;
             }
         })
     }
-
     let setIntervalID = setInterval(start, 2000)
 }
 
