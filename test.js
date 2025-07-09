@@ -483,12 +483,8 @@ btnStop.onclick = () => {
 
 // SECTION 10 : Exercice 12 C : Composant Caroussel Réutilisable
 let imgComponent = document.querySelector(".imgComponent");
-function caroussel ( a, b, c, d) {
-    let array = []
-    a = array.push(a);
-    b = array.push(b);
-    c = array.push(c);
-    d = array.push(d);
+function caroussel ( ...images) {
+    let array = images
     let i = 0;
     imgComponent.setAttribute("src", array[i])
     let lien = imgComponent.getAttribute("src");
@@ -513,12 +509,15 @@ caroussel (
     "https://medias.reussir.fr/action-agricole-picarde/styles/normal_size/azblob/2023-11/GN2OX9OF1_web.jpg?itok=kZtaCjDn" ,
     "https://www.shutterstock.com/shutterstock/photos/2141866355/display_1500/stock-photo-portrait-of-an-african-worker-in-the-nursery-happy-in-the-greenhouse-looking-at-camera-2141866355.jpg", 
     "https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/c/f/8/cf8ee0537a_121131_agriculture-bio-france.jpg",
-    "https://www.shutterstock.com/shutterstock/photos/1799476213/display_1500/stock-photo-peruvian-woman-working-on-vegetable-plantation-on-spring-day-carrying-plastic-box-with-freshly-1799476213.jpg"
+    "https://www.shutterstock.com/shutterstock/photos/1799476213/display_1500/stock-photo-peruvian-woman-working-on-vegetable-plantation-on-spring-day-carrying-plastic-box-with-freshly-1799476213.jpg",
+    "https://media.istockphoto.com/id/1278596068/fr/photo/jeune-jardinier-f%C3%A9minin-heureux-affichant-la-r%C3%A9colte-riche-des-l%C3%A9gumes.jpg?s=2048x2048&w=is&k=20&c=1LDFLQYSF1OXzB4tFWTRX_g9MDGrJNsjHuSeNfmVNvc=",
+    "https://media.istockphoto.com/id/949395206/fr/photo/agriculteur-r%C3%A9colte-des-feuilles-de-laitue.jpg?s=2048x2048&w=is&k=20&c=k6hFSFLaFWz6cWhIkcWBCH9xnFP7En0Gpb0EiPtVsIg=",
+    "https://www.shutterstock.com/shutterstock/photos/2198300493/display_1500/stock-photo-skilled-african-american-horticulturist-harvesting-young-and-tender-leaves-of-green-chard-in-farm-2198300493.jpg",
+    "https://media.istockphoto.com/id/1149217196/fr/photo/agriculteur-contr%C3%B4lant-des-semis-de-tomate-avec-la-tablette-num%C3%A9rique-dans-la-serre-chaude.webp?s=2048x2048&w=is&k=20&c=7Ym-gwsqzULM3_pMGt1g6NtO3m4JD6IVqlZqJ8C0Viw=",
+    "https://media.istockphoto.com/id/498799522/fr/photo/homme-souriant-dans-les-vignobles.webp?s=2048x2048&w=is&k=20&c=fsA2N1SoOhOxCCDlO5B-E6LdIZ0y1MKTCxcqnii7dYc=",
+    "https://media.istockphoto.com/id/1690922108/fr/photo/agricultrice-travaillant-dans-le-jardinage-un-jardinier-collecte-un-panier-de-l%C3%A9gumes.jpg?s=2048x2048&w=is&k=20&c=oj3Nk3peqka4yQYNb9LQS03oyuazhhma2bu8qcOXIZ8=",
+    "https://www.shutterstock.com/shutterstock/photos/2208176163/display_1500/stock-photo-african-american-standing-in-garden-he-s-holding-crate-of-ripe-peaches-2208176163.jpg",
     
 )
-
-
-
-
 
 
