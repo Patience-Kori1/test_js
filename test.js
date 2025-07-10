@@ -205,13 +205,13 @@
 
 // Exercice 7. A. : Annuaire téléphonique
 
-// let annuaire = {
-//     Patricia: '06 66 66 66 66',
-//     David: '07 77 77 77 77',
-//     Simon: '07 32 51 21 2',
-//     Salomé: '08 22 26 65',
-//     Victoria: '02 35 46 7',
-// };
+let annuaire = {
+    Patricia: '06 66 66 66 66',
+    David: '07 77 77 77 77',
+    Simon: '07 32 51 21 2',
+    Salomé: '08 22 26 65',
+    Victoria: '02 35 46 7',
+};
 
 // let searchUser =prompt(" Veuillez saisir le prénom dont vous cherchez le numéro : ");
 // searchUser = searchUser.charAt(0).toUpperCase() + searchUser.slice(1).toLowerCase(); // Pour gérer les majuscules et les miniscules des saisies user. Voir le doc Brouillon JS

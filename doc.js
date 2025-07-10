@@ -429,4 +429,41 @@ console.log(document.styleSheets);
 para2.setAttribute("class", "highlight");
 console.log(para2);
 
+// APPRENTISSAGE des rest Parameters (...param) pour récupérer un nombre illimité d'arguments
+// Syntaxe
+function maFonction(...parametres) {
+    console.log(parametres); // c’est un tableau
+}
+maFonction(); // Array []
+
+// Exemple des integer
+function somme(...nombres) {
+    console.log(nombres.reduce((total, n) => total + n, 0)) ;
+}
+somme(2, 3); // 5
+somme(1, 2, 3, 4); // 10
+
+function saluerToutLeMonde(...prenoms) {
+    prenoms.forEach(p => console.log("Salut", p));
+}
+saluerToutLeMonde("Nadège", "Michel", "Claude");
+// Salut Nadège
+// Salut Michel
+// Salut Claude
+
+// Rest parameter doit etre le dernier paramètre
+function exemple(inutile, ...leReste) { } // Vrai
+function exemple(leResteParameter, autre) { } // Erreur
+
+// A ne pas confondre avec spread syntaxe
+const arr = [1, 2, 3, "Koribirama", 5, ];
+console.log(...arr); // 1 2 3
+
+// Utilisable aussi pour les classes
+class Groupe {
+    constructor(nom, ...membres) {
+        this.nom = nom;
+        this.membres = membres; // tableau
+    }
+}
 
