@@ -467,3 +467,121 @@ class Groupe {
     }
 }
 
+/////////////////////////////////////////////
+// APPRENTISSAGE DU SETTIMEOUT
+// setTimeout(() => {
+// //   console.log("Retardée de 20 seconde.");
+// }, "20000")
+
+// setTimeout(() => {
+// //   console.log("Voici le premier message");
+// }, 5000);
+// setTimeout(() => {
+//   console.log("Voici le second message");
+// }, 3000);
+// let setTimeoutID = setTimeout(() => {
+//   console.log("Voici le troisième message");
+// }, 1000);
+
+// function toto() {
+// //   console.log("toto a été appelée");
+// }
+// setTimeout(toto, 0);
+// console.log("Après setTimeout()");
+
+// setTimeout(toto, 20000);
+// console.log("Après setTimeout()");
+
+// console.log(setTimeoutID)
+
+// function direBonjour(nom) {
+//   console.log("Bonjour " + nom + " !");
+// }
+
+// SETTIMEOUT
+// setTimeout(function, délai_en_millisecondes, param1, param2, ...)
+
+console.log("Avant");
+
+setTimeout(function () {
+  console.log("3 secondes plus tard...");
+}, 3000); // 3000 ms = 3 secondes
+
+console.log("Après");
+
+function saluer(nom) {
+  console.log("Salut " + nom + " !");
+}
+
+setTimeout(saluer, 2000, "Frérot");
+
+// let timeoutID = setTimeout(() => {
+//   console.log("Ce message ne s'affichera pas !");
+// }, 5000);
+
+clearTimeout(timeoutID);
+
+// Cas d'usager, masquer des popup par exemple
+setTimeout(() => {
+  document.querySelector(".popup").style.display = "none";
+}, 4000); // Masque une popup après 4 secondes
+
+// Créer un délai entre deux actions :
+console.log("Chargement...");
+setTimeout(() => {
+  console.log("Données affichées !");
+}, 2000);
+
+ 
+///////////////////////////
+// APPRENTISSAGE DU SETINTERVAL et du ClearInterval
+
+// setInterval(direBonjour, 3000, "Patience");
+
+// let monIntervalle = setInterval(() => {
+//   console.log("Ceci s'affiche toutes les 4 secondes");
+// }, 4000);
+
+// // Stop après 15 secondes
+// setTimeout(() => {
+//   clearInterval(monIntervalle);
+//   console.log("Intervalle arrêté !");
+// }, 15000);
+
+// // Horloge
+// setInterval(() => {
+//   let maintenant = new Date();
+// //   console.log(maintenant.toLocaleTimeString());
+// }, 1000);
+
+// // Caroussel
+// let images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+// let index = 0;
+
+// setInterval(() => {
+//   document.querySelector("img").src = images[index];
+//   index = (index + 1) % images.length;
+// }, 3000); // Change l’image toutes les 3 secondes
+
+// CLEARTIMEOUT() et CLEARINTERVAL()
+
+//timeoutID et clearTimeout
+let timeoutID = setTimeout(() => {
+  console.log("Hello après 5 secondes !");
+}, 5000);
+
+setTimeout(() => {
+  clearTimeout(timeoutID);
+  console.log("Timeout annulé !");
+}, 3000); // Annule l'exécution au bout de 3 secondes
+
+// intervalID et clearInterval
+let count = 0;
+let intervalID = setInterval(() => {
+  console.log("Interval : ", ++count);
+  if (count === 3) {
+    clearInterval(intervalID);
+    console.log("Interval terminé !");
+  }
+}, 1000);
+
