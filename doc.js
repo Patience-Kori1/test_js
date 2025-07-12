@@ -601,5 +601,28 @@ function nomDeLaFonction(param1, param2) {
   // Instructions à exécuter
   return resultat; // (optionnel)
 }
+// Exemple simple de fonction qui affiche Bonjour
+function direBonjour() {
+  console.log("Bonjour frérot !");
+}
+direBonjour(); // Affiche : Bonjour frérot !
+
+// Fonction avec paramètre mais sans return
+function saluer(prenom) {
+  console.log("Salut " + prenom + " !");
+}
+
+saluer("Amine"); // Affiche : Salut Amine !
+saluer("Nadège"); // Affiche : Salut Nadège !
+
+// Une fonction avec return
+function addition(a, b) {
+  return a + b;
+}
+
+let resultat = addition(5, 3); 
+console.log(resultat); // Affiche : 8
+
+
 
 
