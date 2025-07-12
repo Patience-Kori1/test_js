@@ -585,3 +585,21 @@ let intervalID = setInterval(() => {
   }
 }, 1000);
 
+///////////////////
+////////// APPPRENTISSAGE DES FONCTIONS EN JS
+
+function faireDuThe() {
+  console.log("Faire bouillir de l'eau...");
+  console.log("Mettre le sachet de thé...");
+  console.log("Servir !");
+}
+
+faireDuThe(); // Appelle la fonction
+faireDuThe(); // Encore une tasse
+
+function nomDeLaFonction(param1, param2) {
+  // Instructions à exécuter
+  return resultat; // (optionnel)
+}
+
+
