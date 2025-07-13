@@ -645,5 +645,28 @@ function direBonjour(nom = "invité") {
 direBonjour();        // Bonjour invité
 direBonjour("Alex");  // Bonjour Alex
 
+////////// Fonctions anonymes 
+
+// Exemple 1 : Fonction anonyme stockée dans une variable
+const direBonsoir = function() {
+  console.log("Bonsoir frérot !");
+};
+direBonsoir(); // Affiche "Bonjour frérot !"
+
+//Exemple 2 – fonction anonyme comme callback :
+setTimeout(function() {
+  console.log("Coucou après 2 secondes !");
+}, 2000);
+
+//Exemple 3: fonction anonyme retournée par une autre fonction
+function multiplier(x) {
+  return function(y) {
+    return x * y;
+  };
+}
+const foisDeux = multiplier(2);
+console.log(foisDeux(4)); // Affiche 8
+
+
 
 
