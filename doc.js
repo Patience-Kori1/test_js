@@ -393,7 +393,6 @@
 
 //////////// MANIPULATION DES DOCUMENTS HTML EN JS
 
-
 let link = document.querySelector("a"); // Récupérer et conserver la référence d'un élément <a> dans une varibale pour pouvoir le manipuler
 link.textContent = "Mozilla Developer Network"; // Modification du text d'un élément déjà récupéré
 link.href = "https://developer.mozilla.org"; // Modification du contenu d'un attribut d'un élément récupéré
@@ -402,7 +401,7 @@ let para = document.createElement('p'); // Création d'un nouveau d'un noeud pas
 para.textContent = "Nous espérons que vous avez apprécié la balade."; // Création de son contenu
 sect.appendChild(para); // Affectation dans le DOM de l'élément p créé au dessu
 let text = document.createTextNode(" - la première source de connaissances en matière de développement Web.") // Création de noeud de text pas encore affecté au DOM
-let paraLink = document.querySelector('p');
+let paraLink = document.querySelector('p'); 
 paraLink.appendChild(text); // Ajout d'un text conservé dans une variable noeud non affecté pour l'ajouter à un texte déjà existant dans un élément p du DOM
 
 // Déplacer et supprimer les élements
@@ -501,38 +500,34 @@ class Groupe {
 // SETTIMEOUT
 // setTimeout(function, délai_en_millisecondes, param1, param2, ...)
 
-console.log("Avant");
+// console.log("Avant");
 
-setTimeout(function () {
-  console.log("3 secondes plus tard...");
-}, 3000); // 3000 ms = 3 secondes
+// setTimeout(function () {
+//   console.log("3 secondes plus tard...");
+// }, 3000); // 3000 ms = 3 secondes
+// console.log("Après");
 
-console.log("Après");
-
-function saluer(nom) {
-  console.log("Salut " + nom + " !");
-}
-
-setTimeout(saluer, 2000, "Frérot");
+// function saluer(nom) {
+//   console.log("Salut " + nom + " !");
+// }
+// setTimeout(saluer, 2000, "Frérot");
 
 // let timeoutID = setTimeout(() => {
 //   console.log("Ce message ne s'affichera pas !");
 // }, 5000);
+// clearTimeout(timeoutID);
 
-clearTimeout(timeoutID);
-
-// Cas d'usager, masquer des popup par exemple
-setTimeout(() => {
-  document.querySelector(".popup").style.display = "none";
-}, 4000); // Masque une popup après 4 secondes
+// Cas d'usage, masquer des popup par exemple
+// setTimeout(() => {
+//   document.querySelector(".popup").style.display = "none";
+// }, 4000); // Masque une popup après 4 secondes
 
 // Créer un délai entre deux actions :
-console.log("Chargement...");
-setTimeout(() => {
-  console.log("Données affichées !");
-}, 2000);
+// console.log("Chargement...");
+// setTimeout(() => {
+//   console.log("Données affichées !");
+// }, 2000);
 
- 
 ///////////////////////////
 // APPRENTISSAGE DU SETINTERVAL et du ClearInterval
 
@@ -566,24 +561,24 @@ setTimeout(() => {
 // CLEARTIMEOUT() et CLEARINTERVAL()
 
 //timeoutID et clearTimeout
-let timeoutID = setTimeout(() => {
-  console.log("Hello après 5 secondes !");
-}, 5000);
+// let timeoutID = setTimeout(() => {
+//   console.log("Hello après 5 secondes !");
+// }, 5000);
 
-setTimeout(() => {
-  clearTimeout(timeoutID);
-  console.log("Timeout annulé !");
-}, 3000); // Annule l'exécution au bout de 3 secondes
+// setTimeout(() => {
+//   clearTimeout(timeoutID);
+//   console.log("Timeout annulé !");
+// }, 3000); // Annule l'exécution au bout de 3 secondes
 
 // intervalID et clearInterval
-let count = 0;
-let intervalID = setInterval(() => {
-  console.log("Interval : ", ++count);
-  if (count === 3) {
-    clearInterval(intervalID);
-    console.log("Interval terminé !");
-  }
-}, 1000);
+// let count = 0;
+// let intervalID = setInterval(() => {
+//   console.log("Interval : ", ++count);
+//   if (count === 3) {
+//     clearInterval(intervalID);
+//     console.log("Interval terminé !");
+//   }
+// }, 1000);
 
 ///////////////////
 ////////// APPPRENTISSAGE DES FONCTIONS EN JS
@@ -593,9 +588,13 @@ function faireDuThe() {
   console.log("Mettre le sachet de thé...");
   console.log("Servir !");
 }
-
 faireDuThe(); // Appelle la fonction
 faireDuThe(); // Encore une tasse
+
+// Déclarer une fonction classique
+function nomDeLaFonction() {
+  // instructions
+}
 
 function nomDeLaFonction(param1, param2) {
   // Instructions à exécuter
@@ -611,18 +610,40 @@ direBonjour(); // Affiche : Bonjour frérot !
 function saluer(prenom) {
   console.log("Salut " + prenom + " !");
 }
-
 saluer("Amine"); // Affiche : Salut Amine !
 saluer("Nadège"); // Affiche : Salut Nadège !
 
-// Une fonction avec return
+// Une fonction qui retourne une valeur avec return
 function addition(a, b) {
   return a + b;
 }
-
 let resultat = addition(5, 3); 
 console.log(resultat); // Affiche : 8
 
+// Fonction fléchée général
+const saluerrr = () => {
+  console.log("Hello frérot !");
+}
+saluerrr();
+
+// Une fonction fléchée doit toujours être affectée à une variable ou passée comme argument à une autre fonction (callback).
+
+() => {
+  console.log("Hello"); // ERREUR
+};
+
+// Fonction fléchée si un seule paramètre
+const saluerPrenom = prenom => {
+  console.log("Hello " + prenom);
+}
+saluerPrenom("Dally")
+
+// Paramètre par défaut
+function direBonjour(nom = "invité") {
+  console.log("Bonjour " + nom);
+}
+direBonjour();        // Bonjour invité
+direBonjour("Alex");  // Bonjour Alex
 
 
 
