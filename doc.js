@@ -667,6 +667,50 @@ function multiplier(x) {
 const foisDeux = multiplier(2);
 console.log(foisDeux(4)); // Affiche 8
 
+////////////// Fonction Callback //////////////
 
+// exemple simple de callback
+function saluer(nom) {
+  console.log("Salut " + nom);
+}
+function traiterUtilisateur(callback) {
+  const nom = "Frérot";
+  callback(nom); // ← Ici, le callback est exécuté
+}
+traiterUtilisateur(saluer); // ← Ici, tu passes la fonction comme argument
 
+// Mauvais : ça appelle la fonction directement !
+// traiterUtilisateur(saluer()); //Faux 
+// Bon : on passe la référence à la fonction
+// traiterUtilisateur(saluer); //Vrai
+
+// Callback avec des fonctions anonymes
+setTimeout(function() {
+  console.log("J'arrive après 2 secondes");
+}, 2000);
+
+// Callback avec fontion fléchée
+setTimeout(() => {
+  console.log("Coucou frérot (version fléchée)");
+}, 1000);
+
+//Callback avec des fonctions de tableau comme map()
+const nombres = [1, 2, 3];
+const doubles = nombres.map(function(x) {
+  return x * 2;
+});
+console.log(doubles); // [2, 4, 6]
+
+//Attention aux erreurs fréquentes
+// faireQuelqueChose(callback()); // ❌ Mauvais
+// faireQuelqueChose(callback);   // ✅ Correct
+
+// Attention aux imbrications de plusieurs callback, utilisez des promesses
+// faireA(() => {
+//   faireB(() => {
+//     faireC(() => {
+//       console.log("Trop d’imbrications");
+//     });
+//   });
+// });
 
