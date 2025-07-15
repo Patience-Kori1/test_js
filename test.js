@@ -531,83 +531,122 @@ caroussel (
   </div>
 </div> */
 
-function Carousel({ containerId, images, interval = 2000 }) {
-  const container = document.getElementById(containerId);
-  const imgTag = container.querySelector('.carousel-img');
-  const btnPrev = container.querySelector('.prev');
-  const btnNext = container.querySelector('.next');
-  const btnStart = container.querySelector('.start');
-  const btnStop = container.querySelector('.stop');
+// function Carousel({ containerId, images, interval = 2000 }) {
+//   const container = document.getElementById(containerId);
+//   const imgTag = container.querySelector('.carousel-img');
+//   const btnPrev = container.querySelector('.prev');
+//   const btnNext = container.querySelector('.next');
+//   const btnStart = container.querySelector('.start');
+//   const btnStop = container.querySelector('.stop');
 
-  let index = 0;
-  let timerId = null;
+//   let index = 0;
+//   let timerId = null;
 
-  // Initialiser l’image
-  imgTag.setAttribute("src", images[index]);
+//   // Initialiser l’image
+//   imgTag.setAttribute("src", images[index]);
 
-  const updateImage = () => {
-    imgTag.setAttribute("src", images[index]);
-  };
+//   const updateImage = () => {
+//     imgTag.setAttribute("src", images[index]);
+//   };
 
-  const nextImage = () => {
-    index = (index + 1) % images.length;
-    updateImage();
-  };
+//   const nextImage = () => {
+//     index = (index + 1) % images.length;
+//     updateImage();
+//   };
 
-  const prevImage = () => {
-    index = (index - 1 + images.length) % images.length;
-    updateImage();
-  };
+//   const prevImage = () => {
+//     index = (index - 1 + images.length) % images.length;
+//     updateImage();
+//   };
 
-  const start = () => {
-    if (!timerId) {
-      timerId = setInterval(nextImage, interval);
-    }
-  };
+//   const start = () => {
+//     if (!timerId) {
+//       timerId = setInterval(nextImage, interval);
+//     }
+//   };
 
-  const stop = () => {
-    clearInterval(timerId);
-    timerId = null;
-  };
+//   const stop = () => {
+//     clearInterval(timerId);
+//     timerId = null;
+//   };
 
-  // Attacher les événements
-  btnNext.addEventListener("click", nextImage);
-  btnPrev.addEventListener("click", prevImage);
-  btnStart.addEventListener("click", start);
-  btnStop.addEventListener("click", stop);
+//   // Attacher les événements
+//   btnNext.addEventListener("click", nextImage);
+//   btnPrev.addEventListener("click", prevImage);
+//   btnStart.addEventListener("click", start);
+//   btnStop.addEventListener("click", stop);
 
-  // Retourner un objet pour éventuellement manipuler de l'extérieur
-  return {
-    next: nextImage,
-    prev: prevImage,
-    start,
-    stop,
-  };
+//   // Retourner un objet pour éventuellement manipuler de l'extérieur
+//   return {
+//     next: nextImage,
+//     prev: prevImage,
+//     start,
+//     stop,
+//   };
+// }
+
+// const imgs1 = [
+//   "img/photo1.jpg",
+//   "img/photo2.jpg",
+//   "img/photo3.jpg",
+//   "img/photo4.jpg"
+// ];
+
+// const imgs2 = [
+//   "img2/1.jpg",
+//   "img2/2.jpg",
+//   "img2/3.jpg"
+// ];
+
+// // Tu lances ton carrousel
+// const myCarousel1 = Carousel({
+//   containerId: "carousel1",
+//   images: imgs1,
+//   interval: 3000,
+// });
+
+// const myCarousel2 = Carousel({
+//   containerId: "carousel2",
+//   images: imgs2,
+//   interval: 1000,
+// });
+
+//////////// SECTION 11 : Exercice : Horloge petit tp HTML CSS JS ////////////
+
+let second = document.querySelector(".second");
+let minute = document.querySelector(".minute")
+let hours = document.querySelector(".hours")
+
+// Ma première solution sans le modulo
+
+function secondGo() {
+    let secondCal = 0;
+    let minuteur = 0;
+    let hoursCal = 0;
+
+    setInterval(
+        () => {
+
+            secondCal += 1;
+            
+                if (secondCal > 3) {
+                    secondCal = 0;
+                    minuteur += 1;
+                }
+                if (minuteur > 2) {
+                    minuteur = 0;
+                    hoursCal += 1;
+                }
+                if (hoursCal > 2) {
+                    hoursCal = 0;
+                }
+
+            second.textContent = secondCal;
+            minute.textContent = minuteur;
+            hours.textContent = hoursCal;
+        }
+        ,1000
+    ); 
 }
-
-const imgs1 = [
-  "img/photo1.jpg",
-  "img/photo2.jpg",
-  "img/photo3.jpg",
-  "img/photo4.jpg"
-];
-
-const imgs2 = [
-  "img2/1.jpg",
-  "img2/2.jpg",
-  "img2/3.jpg"
-];
-
-// Tu lances ton carrousel
-const myCarousel1 = Carousel({
-  containerId: "carousel1",
-  images: imgs1,
-  interval: 3000,
-});
-
-const myCarousel2 = Carousel({
-  containerId: "carousel2",
-  images: imgs2,
-  interval: 1000,
-});
+secondGo();
 
