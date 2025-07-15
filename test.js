@@ -617,36 +617,58 @@ let second = document.querySelector(".second");
 let minute = document.querySelector(".minute")
 let hours = document.querySelector(".hours")
 
-// Ma première solution sans le modulo
+// // Ma première solution sans le modulo
 
-function secondGo() {
-    let secondCal = 0;
-    let minuteur = 0;
-    let hoursCal = 0;
+// function secondGo() {
+//     let secondCal = 0;
+//     let minuteur = 0;
+//     let hoursCal = 0;
 
-    setInterval(
-        () => {
+//     setInterval(
+//         () => {
 
-            secondCal += 1;
+//             secondCal += 1;
             
-                if (secondCal > 3) {
-                    secondCal = 0;
-                    minuteur += 1;
-                }
-                if (minuteur > 2) {
-                    minuteur = 0;
-                    hoursCal += 1;
-                }
-                if (hoursCal > 2) {
-                    hoursCal = 0;
-                }
+//                 if (secondCal > 3) {
+//                     secondCal = 0;
+//                     minuteur += 1;
+//                 }
+//                 if (minuteur > 2) {
+//                     minuteur = 0;
+//                     hoursCal += 1;
+//                 }
+//                 if (hoursCal > 2) {
+//                     hoursCal = 0;
+//                 }
 
-            second.textContent = secondCal;
-            minute.textContent = minuteur;
-            hours.textContent = hoursCal;
+//             second.textContent = secondCal;
+//             minute.textContent = minuteur;
+//             hours.textContent = hoursCal;
+//         }
+//         ,1000
+//     ); 
+// }
+// secondGo();
+
+// Deuxième solution avec le modulo
+let k = 0;
+let o = 0;
+let p = 0;
+
+let intervalId = setInterval(
+    ()=> {
+        k = (k+1) % 4;
+        second.textContent = k
+        if (k === 0) {
+            o = (o+1) % 3;
+            minute.textContent = o;
         }
-        ,1000
-    ); 
-}
-secondGo();
+        if( o === 0 & k === 0) {
+            hours.textContent = p;
+            p = (p+1) % 3;
+            hours.textContent = p;
+        }
+    },
+1000
+)
 
