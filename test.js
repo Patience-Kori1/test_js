@@ -615,7 +615,7 @@ caroussel (
 
 let second = document.querySelector(".second");
 let minute = document.querySelector(".minute")
-let hours = document.querySelector(".hours")
+let hour = document.querySelector(".hours")
 
 // // Ma première solution sans le modulo
 
@@ -643,7 +643,7 @@ let hours = document.querySelector(".hours")
 
 //             second.textContent = secondCal;
 //             minute.textContent = minuteur;
-//             hours.textContent = hoursCal;
+//             hour.textContent = hoursCal;
 //         }
 //         ,1000
 //     ); 
@@ -651,24 +651,26 @@ let hours = document.querySelector(".hours")
 // secondGo();
 
 // Deuxième solution avec le modulo
-let k = 0;
-let o = 0;
-let p = 0;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+console.log(String(hours).padStart("2", "0"))
 
 let intervalId = setInterval(
     ()=> {
-        k = (k+1) % 4;
-        second.textContent = k
-        if (k === 0) {
-            o = (o+1) % 3;
-            minute.textContent = o;
+        seconds = (seconds + 1) % 4;
+
+        if (seconds === 0) {
+            minutes = (minutes + 1) % 60;
+
+            if ( minutes === 0 ) {
+                hours = (hours+1) % 24;  
+            }
         }
-        if( o === 0 & k === 0) {
-            hours.textContent = p;
-            p = (p+1) % 3;
-            hours.textContent = p;
-        }
+        hour.textContent = String(hours).padStart("2", "0");
+        minute.textContent = String(minutes).padStart("2", "0");
+        second.textContent = String(seconds).padStart("2", "0");
     },
-1000
+    1000
 )
 
