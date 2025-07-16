@@ -651,26 +651,43 @@ let hour = document.querySelector(".hours")
 // secondGo();
 
 // Deuxième solution avec le modulo
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-console.log(String(hours).padStart("2", "0"))
+// let seconds = 0;
+// let minutes = 0;
+// let hours = 0;
+// console.log(String(hours).padStart("2", "0"))
 
-let intervalId = setInterval(
-    ()=> {
-        seconds = (seconds + 1) % 4;
+// let intervalId = setInterval(
+//     ()=> {
+//         seconds = (seconds + 1) % 4;
 
-        if (seconds === 0) {
-            minutes = (minutes + 1) % 60;
+//         if (seconds === 0) {
+//             minutes = (minutes + 1) % 60;
 
-            if ( minutes === 0 ) {
-                hours = (hours+1) % 24;  
-            }
-        }
-        hour.textContent = String(hours).padStart("2", "0");
-        minute.textContent = String(minutes).padStart("2", "0");
-        second.textContent = String(seconds).padStart("2", "0");
-    },
-    1000
-)
+//             if ( minutes === 0 ) {
+//                 hours = (hours+1) % 24;  
+//             }
+//         }
+//         hour.textContent = String(hours).padStart("2", "0");
+//         minute.textContent = String(minutes).padStart("2", "0");
+//         second.textContent = String(seconds).padStart("2", "0");
+//     },
+//     1000
+// )
+// Troisième solution optimisé avec l'objet Date
+
+function updateClock() {
+
+    const now = new Date();
+    
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const hours = String(now.getHours()).padStart(2, "0");
+    
+    second.textContent = seconds;
+    minute.textContent = minutes;
+    hour.textContent = hours;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
 
