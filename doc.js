@@ -735,3 +735,38 @@ const p2 = new Personne("Frérot", 30);
 p1.saluer(); // Salut, je m'appelle Nadège et j'ai 41 ans.
 p2.saluer(); // Salut, je m'appelle Frérot et j'ai 30 ans.
 
+// Notion de prototype : Ajout des méthodes dynamique avec prototypes
+
+console.log(Personne.prototype); // contient la méthode saluer
+
+// En vrai ce code est 
+class Personne {
+  saluer() {
+    console.log("Salut");
+  }
+}
+
+// Et équivalent à :
+function Personne() {}
+Personne.prototype.saluer = function() {
+  console.log("Salut");
+}
+
+// Héritage avec extends et super()
+
+class Employe extends Personne {
+  constructor(nom, age, poste) {
+    super(nom, age); // Appelle le constructor de la classe parent
+    this.poste = poste;
+  }
+
+  decrire() {
+    console.log(`${this.nom} est un(e) ${this.poste}`);
+  }
+}
+
+const e1 = new Employe("Jean", 45, "développeur");
+e1.saluer();   // hérité de Personne
+e1.decrire();  // spécifique à Employe
+
+
