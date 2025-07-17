@@ -714,3 +714,24 @@ console.log(doubles); // [2, 4, 6]
 //   });
 // });
 
+// Apprentissage des classes
+
+// Définir une classe
+class Personne {
+  constructor(nom, age) {
+    this.nom = nom;
+    this.age = age;
+  }
+
+  saluer() {
+    console.log(`Salut, je m'appelle ${this.nom} et j'ai ${this.age} ans.`);
+  }
+}
+
+//Créer des objets à partir de la classe créée
+const p1 = new Personne("Nadège", 41);
+const p2 = new Personne("Frérot", 30);
+
+p1.saluer(); // Salut, je m'appelle Nadège et j'ai 41 ans.
+p2.saluer(); // Salut, je m'appelle Frérot et j'ai 30 ans.
+
